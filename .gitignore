@@ -7,51 +7,54 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-/.bundle
+api/.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+api/log/*
+api/tmp/*
+!api/log/.keep
+!api/tmp/.keep
 
 # Ignore pidfiles, but keep the directory.
-/tmp/pids/*
-!/tmp/pids/
-!/tmp/pids/.keep
+api/tmp/pids/*
+!api/tmp/pids/
+!api/tmp/pids/.keep
 
 # Ignore uploaded files in development.
-/storage/*
-!/storage/.keep
-.byebug_history
+api/storage/*
+!api/storage/.keep
+
+api/.byebug_history
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+api/config/master.key
 
-
+api/.env
 
 # front
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+front/node_modules
+front/.pnp
+front/.pnp.js
 
 # testing
-/coverage
+front/coverage
 
 # production
-/build
+front/build
 
 # misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+front/.DS_Store
+front/.env
+# .env.local
+# .env.development
+# .env.development.local
+# .env.test.local
+# .env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+front/npm-debug.log*
+front/yarn-debug.log*
+front/yarn-error.log*

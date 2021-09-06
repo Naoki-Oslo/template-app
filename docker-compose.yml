@@ -11,6 +11,8 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     ports:
       - "3306:3306"
+    cap_add:
+      - SYS_NICE
   api:
     build:
       context: ./api/
@@ -37,7 +39,7 @@ services:
     ports:
       - "8000:3000"
     depends_on:
-      - db
+      - api
     stdin_open: true
     tty: true
 volumes:
