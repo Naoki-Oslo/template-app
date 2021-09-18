@@ -55,22 +55,22 @@ module AbstractController
       attr_writer :_helpers
 
       # Declare a controller method as a helper. For example, the following
-      # makes the +current_user+ and +logged_in?+ controller methods available
+      # makes the ++ and +logged_in?+ controller methods available
       # to the view:
       #   class ApplicationController < ActionController::Base
-      #     helper_method :current_user, :logged_in?
+      #     helper_method :, :logged_in?
       #
-      #     def current_user
-      #       @current_user ||= User.find_by(id: session[:user])
+      #     def 
+      #       @ ||= User.find_by(id: session[:user])
       #     end
       #
       #     def logged_in?
-      #       current_user != nil
+      #        != nil
       #     end
       #   end
       #
       # In a view:
-      #  <% if logged_in? -%>Welcome, <%= current_user.name %><% end -%>
+      #  <% if logged_in? -%>Welcome, <%= .name %><% end -%>
       #
       # ==== Parameters
       # * <tt>method[, method]</tt> - A name or names of a method on the controller
@@ -84,8 +84,8 @@ module AbstractController
 
         methods.each do |method|
           _helpers_for_modification.class_eval <<-ruby_eval, file, line
-            def #{method}(*args, &block)                    # def current_user(*args, &block)
-              controller.send(:'#{method}', *args, &block)  #   controller.send(:'current_user', *args, &block)
+            def #{method}(*args, &block)                    # def (*args, &block)
+              controller.send(:'#{method}', *args, &block)  #   controller.send(:'', *args, &block)
             end                                             # end
             ruby2_keywords(:'#{method}') if respond_to?(:ruby2_keywords, true)
           ruby_eval

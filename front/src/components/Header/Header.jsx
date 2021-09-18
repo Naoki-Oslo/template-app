@@ -3,7 +3,7 @@ import {createStyles, makeStyles}     from '@material-ui/core/styles';
 import AppBar                         from '@material-ui/core/AppBar';
 import Toolbar                        from '@material-ui/core/Toolbar';
 import {useDispatch, useSelector}     from "react-redux";
-import {getSignedIn}                  from "reducks/users/selectors";
+import {getSignedIn}                  from "reducks/currentUser/selectors";
 import logo                           from "assets/img/icons/logo.png";
 import {HeaderMenu, TemporaryDrawer}   from "./index";
 import {push}                         from "connected-react-router"
@@ -60,4 +60,4 @@ const Header = () => {
     );
 }
 
-export default Header
+export default Header;

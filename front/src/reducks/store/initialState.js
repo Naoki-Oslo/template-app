@@ -14,10 +14,22 @@ export const initialState = {
         list: []
     },
 
-    users: {
+    categories: {
+        list: []
+    },
+
+    currentUser: {
         isSignedIn: false,
         role: "",
         uid: "",
-        username: ""
+        username: "",
+        occupation: "",
+        organization: "",
+        profile: "",
+        image: "",
+    },
+
+    users: {
+        list: []
     }
 };

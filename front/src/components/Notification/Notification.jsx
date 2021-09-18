@@ -7,7 +7,7 @@ import { closeNotificationAction } from 'reducks/notification/actions'
 import { getNotificationIsOpen, getNotificationVariant, getNotificationMessage } from 'reducks/notification/selectors'
 import { NotificationSnackbar } from './index'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   snackbar: {
     height: 80,
   },

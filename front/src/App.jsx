@@ -2,9 +2,8 @@ import { Container } from '@material-ui/core';
 import React from 'react';
 import { Footer, Loading } from 'components/UIkit/index';
 import { Notification } from 'components/Notification';
-// import { Header } from 'components/Header'
 import Router from 'Router';
-import { Header } from 'components/Header'
+import { Header } from 'components/Header/index';
 import 'assets/reset.css';
 import 'assets/style.css';
 

@@ -9,5 +9,5 @@ export const getLoadingState = createSelector(
 
 export const getLoadingText = createSelector(
     [loadingSelector],
-    (state) => state.text)
-;
+    (state) => state.text
+);

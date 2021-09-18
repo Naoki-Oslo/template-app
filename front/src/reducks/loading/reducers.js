@@ -1,5 +1,5 @@
-import initialState from '../store/initialState'
-import * as Actions from './actions'
+import * as Actions from './actions';
+import {initialState} from 'reducks/store/initialState';
 
 export const LoadingReducer = (state = initialState.loading, action) => {
   switch (action.type) {

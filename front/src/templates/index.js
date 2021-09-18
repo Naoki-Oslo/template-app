@@ -1,3 +1,10 @@
 export {default as Home} from './Home';
 export {default as SignIn} from './SignIn';
 export {default as SignUp} from './SignUp';
+export {default as PostDetail} from './PostDetail';
+export {default as PostEdit} from './PostEdit';
+export {default as PostList} from './PostList';
+export {default as PostNew} from './PostNew';
+export {default as UserEdit} from './UserEdit';
+export {default as UserList} from './UserList';
+export {default as UserMyPage} from './UserMyPage';

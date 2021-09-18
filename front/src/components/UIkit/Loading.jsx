@@ -1,24 +1,24 @@
 import CircularProgress from '@material-ui/core/CircularProgress'
-import { makeStyles } from '@material-ui/styles'
-import React from 'react'
-import { useSelector } from 'react-redux'
+import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { getLoadingState, getLoadingText } from 'reducks/loading/selectors'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    alignItems: 'center',
-    background: 'white',
-    display: 'flex',
-    flexFlow: 'column',
-    justifyContent: 'center',
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    height: '100vh',
-    width: '100%',
-    zIndex: 10,
-  },
-}))
+const useStyles = makeStyles(() => ({
+    root: {
+        alignItems: 'center',
+        background: 'white',
+        display: 'flex',
+        flexFlow: 'column',
+        justifyContent: 'center',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        height: '100vh',
+        width: '100%',
+        zIndex: 10,
+    },
+}));
 
 const Loading = ({ children }) => {
   const classes = useStyles()
