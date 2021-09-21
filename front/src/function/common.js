@@ -1,5 +1,16 @@
 export const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
+// functions/functions.js //
+export const subString = (string, num) => {
+    const content = string;
+    if (content.length > num) {
+      const splitContent = content.substring(0, num);
+      return splitContent + '...';
+    } else {
+      return content;
+    }
+};
+
 export const createRandamString = (length) => {
     var characters = 'abcdefghijklmnopqrstuvwxyz0123456789'
     var randamString = ''

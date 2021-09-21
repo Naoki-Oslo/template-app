@@ -1,2 +1,2 @@
 export { default as PostCard } from './PostCard';
-export { default as PostDetailCard } from './PostDetailCard';
+export { default as CommentDetail } from './CommentDetail';

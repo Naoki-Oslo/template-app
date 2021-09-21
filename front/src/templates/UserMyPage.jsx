@@ -3,15 +3,11 @@ import { push } from 'connected-react-router';
 import { useSelector, useDispatch } from "react-redux";
 import { SecondaryButton, TextDetail } from "components/UIkit";
 import { getCurrentUser } from "reducks/currentUser/selectors";
-import { getUsers } from "reducks/users/selectors";
 
 const UserMyPage = () => {
     const dispatch = useDispatch();
     const selector = useSelector((state) => state);
     const currentUser = getCurrentUser(selector);
-
-    const userPosts = { users: [] }
-    userPosts["users"] = getUsers(selector)
     
 //    const currentUserPosts = userPosts.filter(userPost => {
 //        return userPost.uid === userId

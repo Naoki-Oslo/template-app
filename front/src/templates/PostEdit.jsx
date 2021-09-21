@@ -73,15 +73,15 @@ const PostEdit = () => {
                     onChange={inputSubject} rows={1} value={subject} type={"text"}
                 />
                 <TextInput
-                    fullWidth={true} label={"English(英訳)"} multiline={false} required={true}
+                    fullWidth={true} label={"English(英訳)"} multiline={true} required={true}
                     onChange={inputContentEnglish} rows={5} value={contentEnglish} type={"text"}
                 />
                 <TextInput
-                    fullWidth={true} label={"Japanese(和訳)"} multiline={false} required={true}
+                    fullWidth={true} label={"Japanese(和訳)"} multiline={true} required={true}
                     onChange={inputContentJapanese} rows={5} value={contentJapanese} type={"text"}
                 />
                 <TextInput
-                    fullWidth={true} label={"説明/補足"} multiline={false} required={false}
+                    fullWidth={true} label={"説明/補足"} multiline={true} required={false}
                     onChange={inputTips} rows={5} value={tips} type={"text"}
                 />
                 <div className="module-spacer--small"/>

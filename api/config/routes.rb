@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :posts
       resources :users
       resources :categories, only: %i[index]
+      resources :comments
       
       mount_devise_token_auth_for 'User', at: 'auth', controllers: {
         registrations: 'api/v1/auth/registrations',

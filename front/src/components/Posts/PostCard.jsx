@@ -3,28 +3,26 @@ import { push } from "connected-react-router"
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import { SmallButton } from 'components/UIkit/index';
 import { useDispatch } from "react-redux";
+import { TextDetail } from 'components/UIkit/index';
+import { subString } from 'function/common';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         [theme.breakpoints.down('sm')]: {
-            margin: 8,
-            width: 'calc(50% - 16px)'
+            margin: '0 0 15px 0',
+            width: '100%',
+            height: 350,
         },
         [theme.breakpoints.up('md')]: {
-            margin: 16,
-            width: 'calc(33.3333% - 32px)'
+            margin: 8,
+            width: 'calc(50% - 16px)',
+            height: 450,
         }
     },
-    content: {
-        display: 'flex',
-        padding: '16 8',
-        textAlign: 'left',
-        '&:last-child': {
-            paddingBottom: 16
-        }
+    button: {
+        textAlign: 'right',
     },
 }));
 
@@ -33,33 +31,26 @@ const PostCard = (props) => {
     const dispatch = useDispatch();
 
   return (
-    <Card className={classes.root}>
-        <CardContent className={classes.content}>
-            <Typography className={classes.content} color="textSecondary" component="p">
-                title:{props.title}
-            </Typography>
-            <Typography className={classes.content} color="textSecondary" component="p">
-                category:{props.category}
-            </Typography>
-            <Typography className={classes.content} color="textSecondary" component="p">
-                subject:{props.subject}
-            </Typography>
-            <Typography className={classes.content} color="textSecondary" component="p">
-                contentEnglish:{props.contentEnglish}
-            </Typography>
-            <Typography className={classes.content} color="textSecondary" component="p">
-                contentJapanese:{props.contentJapanese}
-            </Typography>
-            <Typography className={classes.content} color="textSecondary" component="p">
-                tips:{props.tips}
-            </Typography>
-        </CardContent>
-        <Button size="small" onClick={() => {
-            dispatch(push('/posts/detail/' + props.id))}}>
-            全文へ
-        </Button>
-    </Card>
-  );
+    <>
+        <Card className={classes.root} variant="outlined">
+            <CardContent>
+                <TextDetail label={"title"} value={props.title}/>
+                <TextDetail label={"category"} value={props.category}/>
+                <TextDetail label={"subject"} value={props.subject}/>
+                <TextDetail label={"English"} value={subString(props.contentEnglish, 100)}/>
+                <TextDetail label={"Japanese"} value={subString(props.contentJapanese, 100)}/>
+                <TextDetail label={"tips"} value={subString(props.tips, 100)}/>
+            </CardContent>
+            <CardContent className={classes.button}>
+                <SmallButton
+                    label={"全文へ"}
+                    onClick={() => {dispatch(push('/posts/detail/' + props.id))}}
+                />
+            </CardContent>
+        </Card>
+        <div className="module-spacer--medium" />
+    </>
+ );
 }
 
 export default PostCard;

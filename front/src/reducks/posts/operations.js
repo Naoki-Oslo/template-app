@@ -180,3 +180,46 @@ export const updatePost = (uid, id, title, subject, category, contentEnglish, co
       dispatch(setNotificationAction(...Object.values(notificationContent)))
     }
 };
+
+
+// コメントを新規投稿
+export const createComment = (uid, id, comment) => {
+  return async (dispatch) => {
+
+    dispatch(showLoadingAction('コメントを登録中...'))
+
+    const apiUrl = process.env.REACT_APP_API_V1_URL + '/comments'
+    const commentData = {
+        user_id: uid,
+        post_id: id,
+        comment: comment,
+    }
+
+    await axios
+        .post(apiUrl, commentData, {
+            headers: {
+                'access-token': localStorage.getItem('auth_token'),
+                client: localStorage.getItem('client'),
+                uid: localStorage.getItem('uid'),
+            },
+        })
+        .then(() => {
+            dispatch(push('/posts/' + String(id)))
+            notificationContent = {
+              variant: 'success',
+              message: 'コメントを作成しました',
+            }
+        })
+        .catch((error) => {
+            console.log('error', error)
+            notificationContent = {
+                variant: 'error',
+                message: 'コメント作成に失敗しました',
+            }
+        })
+    await _sleep(2500)
+    dispatch(hideLoadingAction())
+    await _sleep(300)
+    dispatch(setNotificationAction(...Object.values(notificationContent)))
+  }
+};

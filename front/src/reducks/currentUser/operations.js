@@ -41,7 +41,7 @@ export const getCurrentUser = () => {
             role: userData.admin,
           }
         dispatch(
-          signInAction(userProfile)
+          signInAction(userProfile),
         )})
         .catch(() => {
           dispatch(setNotificationAction('error', 'ログインに失敗しました。'))
@@ -182,7 +182,7 @@ export const signIn = (email, password) => {
 };
 
 
-export const editUserProfile = ( uid, username, email, occupation, organization, profile, image ) => {
+export const updateUserProfile = ( uid, username, email, occupation, organization, profile, image ) => {
     return async (dispatch) => {
 
         const apiUrl = process.env.REACT_APP_API_V1_URL + '/users/' + String(uid);

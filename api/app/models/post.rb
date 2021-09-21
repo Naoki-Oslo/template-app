@@ -8,4 +8,6 @@ class Post < ApplicationRecord
     validates :content_ja, presence: true, length: { maximum: 400 }
     validates :content_en, presence: true, length: { maximum: 400 }
     validates :tips, length: { maximum: 400 }
+
+    has_many :comments, dependent: :destroy
 end

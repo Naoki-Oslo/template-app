@@ -20,7 +20,7 @@ const PostList = () => {
                     posts.map(post => (
                         <PostCard
                             id={post.id} key={post.id} title={post.title} category={post.category} subject={post.subject} 
-                            contentEnglish={post.contentEnglish} contentJapanese={post.contentJapanese}
+                            contentEnglish={post.content_en} contentJapanese={post.content_ja}
                             tips={post.tips}
                         />
                     ))
