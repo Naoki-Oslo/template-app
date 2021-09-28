@@ -25,6 +25,7 @@ import InsertInvitationIcon from '@material-ui/icons/InsertInvitation';
 import PanToolIcon from '@material-ui/icons/PanTool';
 import MoreIcon from '@material-ui/icons/More';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import SelectAllIcon from '@material-ui/icons/SelectAll';
 
 const useStyles = makeStyles((theme) =>
     createStyles({
@@ -59,18 +60,19 @@ const TemporaryDrawer = (props) => {
 
     const [searchKeyword, setSearchKeyword] = useState("")    
     const menus = [
-                {func: selectMenu, label: "問合せ・見積り",    icon: <EmailIcon/>, id: "問合せ・見積り", value: "/?category=問合せ・見積り"},
-                {func: selectMenu, label: "注文・受領",    icon: <LocalShippingIcon/>,   id: "注文・受領",  value: "/?category=注文・受領"},
-                {func: selectMenu, label: "支払い", icon: <PaymentIcon/>,    id: "支払い",  value: "/?category=支払い"},
-                {func: selectMenu, label: "契約",    icon: <CreateIcon/>, id: "契約", value: "/?category=契約"},
-                {func: selectMenu, label: "依頼・申請",    icon: <TextsmsIcon/>,   id: "依頼・申請",  value: "/?category=依頼・申請"},
-                {func: selectMenu, label: "会議・イベント", icon: <GroupIcon/>,    id: "会議・イベント",  value: "/?category=会議・イベント"},
-                {func: selectMenu, label: "アポイントメント",    icon: <ScheduleIcon/>, id: "アポイントメント", value: "/?category=アポイントメント"},
-                {func: selectMenu, label: "出張",    icon: <FlightTakeoffIcon/>,   id: "出張",  value: "/?category=出張"},
-                {func: selectMenu, label: "クレーム", icon: <HeadsetMicIcon/>,    id: "クレーム",  value: "/?category=クレーム"},
-                {func: selectMenu, label: "案内・通知",    icon: <InsertInvitationIcon/>, id: "案内・通知", value: "/?category=案内・通知"},
-                {func: selectMenu, label: "社外の挨拶",    icon: <PanToolIcon/>,   id: "社外の挨拶",  value: "/?category=社外の挨拶"},
-                {func: selectMenu, label: "その他", icon: <MoreIcon/>,    id: "その他",  value: "/?category=その他"},
+                {func: selectMenu, label: "テンプレート一覧", icon: <SelectAllIcon />, id: "テンプレート一覧", value: "/posts/list"},
+                {func: selectMenu, label: "問合せ・見積り",    icon: <EmailIcon/>, id: "問合せ・見積り", value: "/posts/list/?category=1"},
+                {func: selectMenu, label: "注文・受領",    icon: <LocalShippingIcon/>,   id: "注文・受領",  value: "/posts/list/?category=2"},
+                {func: selectMenu, label: "支払い", icon: <PaymentIcon/>,    id: "支払い",  value: "/posts/list/?category=3"},
+                {func: selectMenu, label: "契約",    icon: <CreateIcon/>, id: "契約", value: "/posts/list/?category=4"},
+                {func: selectMenu, label: "依頼・申請",    icon: <TextsmsIcon/>,   id: "依頼・申請",  value: "/posts/list/?category=5"},
+                {func: selectMenu, label: "会議・イベント", icon: <GroupIcon/>,    id: "会議・イベント",  value: "/posts/list/?category=6"},
+                {func: selectMenu, label: "アポイントメント",    icon: <ScheduleIcon/>, id: "アポイントメント", value: "/posts/list/?category=7"},
+                {func: selectMenu, label: "出張",    icon: <FlightTakeoffIcon/>,   id: "出張",  value: "/posts/list/?category=8"},
+                {func: selectMenu, label: "クレーム", icon: <HeadsetMicIcon/>,    id: "クレーム",  value: "/posts/list/?category=9"},
+                {func: selectMenu, label: "案内・通知",    icon: <InsertInvitationIcon/>, id: "案内・通知", value: "/posts/list/?category=10"},
+                {func: selectMenu, label: "社外の挨拶",    icon: <PanToolIcon/>,   id: "社外の挨拶",  value: "/posts/list/?category=11"},
+                {func: selectMenu, label: "その他", icon: <MoreIcon/>,    id: "その他",  value: "/posts/list/?category=12"},
         ];
 
     const inputSearchKeyword = useCallback((event) => {

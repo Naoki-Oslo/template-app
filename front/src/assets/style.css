@@ -27,7 +27,7 @@
 
 .c-section-container {
     margin: 0 auto;
-    max-width: 400px;
+    max-width: 550px;
     padding: 1rem;
     height: auto;
     width: calc(100% - 2rem);
@@ -89,7 +89,7 @@
 .p-media__thumb {
     position: relative;
     overflow: hidden;
-    width: 100%
+    width: 30%
 }
 
 .p-media__thumb::before {

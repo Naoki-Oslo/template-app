@@ -1,11 +1,8 @@
 class Api::V1::CommentsController < ApplicationController
 
   def index
-    @post = Post.find_by(params[:post_id])
-    @comments = @post.comments.all.includes(:user).order(created_at: :desc)
-    if @comments.length >= 0
-      render json: { status: 'SUCCESS', message: 'Loaded comments', data: @comments}
-    end
+    @comments = Comment.all.includes(:user).order(created_at: :desc)
+    render json: { status: 'SUCCESS', message: 'Loaded comments', data: @comments}
   end
 
   def create

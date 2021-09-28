@@ -18,8 +18,10 @@ class Api::V1::PostsController < ApplicationController
     end
 
     def index
-        @posts = Post.all
-        render json: { status: 'SUCCESS', message: 'Loaded posts', data: @posts}
+        @posts = Post.all.where(params[:category])
+        @comments = Comment.all.includes(:user).order(created_at: :desc)
+        @likes = Like.all
+        render json: { status: 'SUCCESS', message: 'Loaded posts', posts: @posts, comments: @comments, likes: @likes}
     end
 
     def destroy

@@ -11,6 +11,10 @@ const useStyles = makeStyles({
         height: 300,
         width: 500,
     },
+    icon: {
+        height: 48,
+        width: 48
+    }
 });
 
 const CommentDetail = (props) => {   
@@ -27,7 +31,8 @@ const CommentDetail = (props) => {
     return (
         <div className="p-grid__row">
             <section className="p-grid__row">
-                {user.image === "" ? <img alt="user_picture" src={user.image} width={10} height={10} onClick={() => dispatch(push('/'))} role="button" /> : <img alt="no_image_picture" src={noProfile} width={250} height={100} onClick={() => dispatch(push('/'))} role="button" /> }
+                {user.image === "" ? <img alt="user_picture" src={user.image} className={classes.icon} onClick={() => dispatch(push('/'))} role="button" />
+                 : <img alt="no_image_picture" src={noProfile} className={classes.icon} onClick={() => dispatch(push('/users/' + String(props.uid)))} role="button" /> }
                 {user.name}
             </section>
             <section className={classes.comment}>

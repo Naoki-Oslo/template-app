@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getPosts } from 'reducks/posts/selectors';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import { PostCard } from 'components/Posts/index';
+import { getUserId } from 'reducks/currentUser/selectors';
+import { fetchPosts } from 'reducks/posts/operations';
+import { PaginationButtons } from 'components/UIkit/index';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -14,12 +18,12 @@ function TabPanel(props) {
     <div
       role="tabpanel"
       hidden={value !== index}
-      id={`nav-tabpanel-${index}`}
-      aria-labelledby={`nav-tab-${index}`}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
       {value === index && (
-        <Box p={3}>
+        <Box sx={{ p: 4 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -29,68 +33,88 @@ function TabPanel(props) {
 
 TabPanel.propTypes = {
   children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
 };
 
 function a11yProps(index) {
   return {
-    id: `nav-tab-${index}`,
-    'aria-controls': `nav-tabpanel-${index}`,
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
   };
 }
 
-function LinkTab(props) {
-  return (
-    <Tab
-      component="a"
-      onClick={(event) => {
-        event.preventDefault();
-      }}
-      {...props}
-    />
-  );
-}
+const NavTabs = () => {
+  const [value, setValue] = useState(0);
+  const dispatch = useDispatch();
+  const selector = useSelector((state) => state);
+  const postsAll = getPosts(selector);
+  const uid = getUserId(selector);
+  const posts = postsAll.filter((element) => element.user_id === uid)
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
+  const [page, setPage] = useState(1);
+  const [start, setStart] = useState(0);
+  const perPage = 12;
 
-export default function NavTabs() {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const calculatePageCount = () => {
+      return Math.ceil((posts.length / perPage) - 1)
+     };
+
+  useEffect(() => {
+      dispatch(fetchPosts())
+  },[])
+
+  useEffect(() => {
+      let pageNumber = page; //選択されたページ番号
+      const position = pageNumber * perPage;
+      setStart(position);  //スタート位置をページ番号 * 1ページあたりの数、とする(例えば2番を選ぶと12 * 1で12番が先頭になる、つまり13番目以降の書籍が表示される)
+  },[page])
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Tabs
-          variant="fullWidth"
-          value={value}
-          onChange={handleChange}
-          aria-label="nav tabs example"
-        >
-          <LinkTab label="Page One" href="/drafts" {...a11yProps(0)} />
-          <LinkTab label="Page Two" href="/trash" {...a11yProps(1)} />
-          <LinkTab label="Page Three" href="/spam" {...a11yProps(2)} />
+    <Box sx={{ width: '100%' }} className="center">
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Tabs value={value} onChange={handleChange} aria-label="Nav-tabs" centered variant="fullWidth">
+          <Tab label="投稿一覧" {...a11yProps(0)} />
+          <Tab label="お気に入り" {...a11yProps(1)} />
+          <Tab label="いいねした投稿" {...a11yProps(2)} />
+          <Tab label="メモ" {...a11yProps(3)} />
         </Tabs>
-      </AppBar>
+      </Box>
       <TabPanel value={value} index={0}>
-        Page One
+        <section className="c-section-wrapin">
+          <div className="p-grid__row">
+          {posts.length > 0 && (
+              posts.slice(start, start + perPage).map(post => (
+              <PostCard
+                  id={post.id} key={post.id} title={post.title} category={post.category} subject={post.subject} 
+                  contentEnglish={post.content_en} contentJapanese={post.content_ja}
+                  tips={post.tips}
+              />
+          )))}
+          </div>
+        </section>
+        <div className="module-spacer--medium" />
+        <PaginationButtons
+            pageCount={calculatePageCount()}
+            page={page}
+            setPage={setPage}
+        />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Page Two
+        開発中
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Page Three
+        開発中
       </TabPanel>
-    </div>
+      <TabPanel value={value} index={3}>
+        開発中
+      </TabPanel>
+    </Box>
   );
-}
+};
 
+export default NavTabs;

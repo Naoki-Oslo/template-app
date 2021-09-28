@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-snapshot'
+import { render } from 'react-dom'
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import * as History from 'history';
@@ -12,6 +12,8 @@ import App from './App';
 
 const history = History.createBrowserHistory();
 export const store = createStore(history);
+
+console.log(store.getState())
 
 render(
   <Provider store={store}>
@@ -26,3 +28,4 @@ render(
 );
 
 serviceWorker.register();
+

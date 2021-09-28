@@ -7,13 +7,14 @@ import { signInAction, signOutAction, editProfileStateAction } from './actions';
 import { initialFetchUsers } from 'reducks/users/operations';
 import { initialFetchPosts } from 'reducks/posts/operations';
 import { initialFetchCategories } from 'reducks/categories/operations';
+import { initialFetchLikes } from 'reducks/likes/operations'
 
 require('dotenv').config();
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = 'REACT_APP_BASE_URL';
 
 let notificationContent = {}
 
-export const getCurrentUser = () => {
+export const listenAuthState = () => {
   return async (dispatch) => {
     // LocalStorageに認証情報が含まれている場合
     if (localStorage.getItem('access_token')) {
@@ -33,16 +34,22 @@ export const getCurrentUser = () => {
           const userProfile = {
             isSignedIn: true,
             uid: userData.id,
-            username: userData.name,
+            name: userData.name,
             email: userData.email,
             occupation: userData.occupation,
             organization: userData.organization,
             profile: userData.profile,
+            image: userData.image,
             role: userData.admin,
           }
         dispatch(
           signInAction(userProfile),
-        )})
+        )
+        dispatch(initialFetchUsers())
+        dispatch(initialFetchPosts())
+        dispatch(initialFetchCategories())
+        dispatch(initialFetchLikes())
+        })
         .catch(() => {
           dispatch(setNotificationAction('error', 'ログインに失敗しました。'))
         })
@@ -55,7 +62,7 @@ export const getCurrentUser = () => {
 };
 
 
-export const signUp = (username, occupation, organization, email, password, confirmPassword) => {
+export const signUp = (name, occupation, organization, email, password, confirmPassword) => {
     return async (dispatch) => {
 
         // Validations
@@ -79,7 +86,7 @@ export const signUp = (username, occupation, organization, email, password, conf
 
         const apiUrl = process.env.REACT_APP_API_V1_URL + '/auth';
         const initialData = {
-            name: username,
+            name: name,
             occupation: occupation,
             organization: organization,
             email: email,
@@ -93,7 +100,7 @@ export const signUp = (username, occupation, organization, email, password, conf
                 localStorage.setItem('access_token', response.headers['access-token']);
                 localStorage.setItem('client', response.headers['client']);
                 localStorage.setItem('uid', response.headers['uid']);
-                dispatch(push('/')) // 途中のため、一時的に '/' としている
+                dispatch(push('/posts/list')) // 途中のため、一時的に '/' としている
                 notificationContent = {
                   variant: 'success',
                   message: 'アカウント登録に成功しました。',
@@ -148,17 +155,15 @@ export const signIn = (email, password) => {
                 const userProfile = {
                   isSignedIn: true,
                   uid: userData.id,
-                  username: userData.name,
+                  name: userData.name,
                   occupation: userData.occupation,
                   organization: userData.organization,                    
                   profile: userData.profile,
                   image: userData.image,
                   role: userData.admin,
                 }
-                dispatch(
-                  signInAction(userProfile)
-                )
-                dispatch(push('/'))
+                dispatch(signInAction(userProfile))
+                dispatch(push('/posts/list'))
                 notificationContent = {
                   variant: 'success',
                   message: 'ログインしました。',
@@ -166,6 +171,7 @@ export const signIn = (email, password) => {
                 dispatch(initialFetchUsers())
                 dispatch(initialFetchPosts())
                 dispatch(initialFetchCategories())
+                dispatch(initialFetchLikes())
             })
             .catch((error) => {
                 console.log('error', error)
@@ -182,25 +188,25 @@ export const signIn = (email, password) => {
 };
 
 
-export const updateUserProfile = ( uid, username, email, occupation, organization, profile, image ) => {
+export const updateUserProfile = ( uid, name, occupation, organization, profile, email, password, confirmPassword, data ) => {
     return async (dispatch) => {
 
         const apiUrl = process.env.REACT_APP_API_V1_URL + '/users/' + String(uid);
         const userProfile = {
-            username: username,
+            id: uid,
+            name: name,
             email: email,
+            password: password,
+            password_confirmation: confirmPassword,
             occupation: occupation,
             organization: organization,
             profile: profile,
-            image: image,
+            image: data,
         };
 
         await axios
             .patch(apiUrl, userProfile)
-            .then((response) => {
-                localStorage.setItem('access_token', response.headers['access-token']);
-                localStorage.setItem('client', response.headers['client']);
-                localStorage.setItem('uid', response.headers['uid']);
+            .then(() => {
                 dispatch(editProfileStateAction(userProfile));
                 dispatch(goBack())
                 notificationContent = {
@@ -253,7 +259,7 @@ export const signInGuestUser = () => {
               localStorage.setItem('access_token', response.headers['access-token'])
               localStorage.setItem('client', response.headers['client'])
               localStorage.setItem('uid', response.headers['uid'])
-              dispatch(push('/')) // 途中のため、一時的に '/' としている
+              dispatch(push('/posts/list'))
               notificationContent = {
                 variant: 'success',
                 message: 'ゲストログインしました。',
@@ -306,7 +312,7 @@ export const deleteUser = () => {
     await axios
       .delete(apiUrl, { data })
       .then(() => {
-        dispatch(push('/'))
+        dispatch(push('/posts/list'))
         localStorage.clear()
         dispatch(signOutAction())
         notificationContent = {

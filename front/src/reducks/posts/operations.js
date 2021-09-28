@@ -3,7 +3,7 @@ import { push } from 'connected-react-router'
 import { _sleep } from 'function/common'
 import { hideLoadingAction, showLoadingAction } from 'reducks/loading/actions'
 import { setNotificationAction } from 'reducks/notification/actions'
-import { fetchPostsAction } from './actions'
+import { fetchPostsAction, deletePostAction, createPostsAction, updatePostsAction } from './actions'
 
 require('dotenv').config();
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = 'REACT_APP_BASE_URL';
@@ -11,10 +11,10 @@ axios.defaults.headers.post['Access-Control-Allow-Origin'] = 'REACT_APP_BASE_URL
 let notificationContent = {}
 
 // テンプレートを削除
-export const deletePost = (id) => {
+export const deletePost = () => {
   return async (dispatch) => {
     dispatch(showLoadingAction('テンプレートを削除しています...'))
-    const apiUrl = process.env.REACT_APP_API_V1_URL + '/posts/' + String(id)
+    const apiUrl = process.env.REACT_APP_API_V1_URL + '/posts'
 
     await axios
       .delete(apiUrl, {
@@ -24,9 +24,10 @@ export const deletePost = (id) => {
           uid: localStorage.getItem('uid'),
         },
       })
-      .then(() => {
-        dispatch(fetchPosts())
-        dispatch(push('/posts/index'))
+      .then((response) => {
+        const data = response.data.data
+        dispatch(deletePostAction(data))
+        dispatch(push('/posts/list'))
         notificationContent = {
           variant: 'success',
           message: 'テンプレートを削除しました',
@@ -47,8 +48,9 @@ export const deletePost = (id) => {
 }
 
 // posts全体を取得する
-export const fetchPosts = () => {
+export const fetchPosts = (category) => {
   return async (dispatch) => {
+
     const apiUrl = process.env.REACT_APP_API_V1_URL + '/posts'
 
     await axios
@@ -60,8 +62,9 @@ export const fetchPosts = () => {
         },
       })
       .then((response) => {
-        const data = response.data.data
-        dispatch(fetchPostsAction(data))
+        const data = response.data.posts
+        let posts = (category === "") ? data : data.filter((element) => element.category === category.name)
+        dispatch(fetchPostsAction(posts))
       })
       .catch((error) => {
         console.log('error', error)
@@ -108,8 +111,8 @@ export const createPost = (uid, title, subject, category, contentEnglish, conten
         })
         .then((response) => {
             const data = response.data.data
-            dispatch(fetchPostsAction(data))
-            dispatch(push('/'))
+            dispatch(createPostsAction(data))
+            dispatch(push('/posts/list'))
             notificationContent = {
               variant: 'success',
               message: '投稿に成功しました',
@@ -134,7 +137,7 @@ export const createPost = (uid, title, subject, category, contentEnglish, conten
 export const updatePost = (uid, id, title, subject, category, contentEnglish, contentJapanese, tips) => {
     return async (dispatch) => {
   
-      dispatch(showLoadingAction('テンプレートを編集中...'))
+      dispatch(showLoadingAction('テンプレートを更新中...'))
   
       const apiUrl = process.env.REACT_APP_API_V1_URL + '/posts/' + String(id)
       const updateData = {
@@ -159,8 +162,8 @@ export const updatePost = (uid, id, title, subject, category, contentEnglish, co
           .then((response) => {
               // responseには、@posts = Post.allを受け取っている
               const data = response.data.data
-              dispatch(fetchPostsAction(data))
-              dispatch(push('/'))
+              dispatch(updatePostsAction(data))
+              dispatch(push('/posts/list'))
               notificationContent = {
                 variant: 'success',
                 message: 'テンプレートを更新しました',
@@ -204,7 +207,6 @@ export const createComment = (uid, id, comment) => {
             },
         })
         .then(() => {
-            dispatch(push('/posts/' + String(id)))
             notificationContent = {
               variant: 'success',
               message: 'コメントを作成しました',

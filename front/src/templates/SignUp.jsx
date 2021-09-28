@@ -7,7 +7,7 @@ import { push } from 'connected-react-router';
 const SignUp = () => {
     const dispatch = useDispatch();
 
-    const [username, setUsername] = useState(""),
+    const [name, setName] = useState(""),
           [occupation, setOccupation] = useState(""),
           [organization, setOrganization] = useState(""),
           [email, setEmail] = useState(""),
@@ -15,9 +15,9 @@ const SignUp = () => {
           [confirmPassword, setConfirmPassword] = useState("");
 
     // 子コンポーネントに渡すときはuseCallback関数(メモ化)を使うとパフォーマンスが上がる。
-    const inputUsername = useCallback((event) => {
-        setUsername(event.target.value)
-    }, [setUsername]);
+    const inputName = useCallback((event) => {
+        setName(event.target.value)
+    }, [setName]);
 
     const inputOccupation = useCallback((event) => {
         setOccupation(event.target.value)
@@ -45,7 +45,7 @@ const SignUp = () => {
             <div className="module-spacer--medium" />
             <TextInput
                 fullWidth={true} label={"ユーザー名"} multiline={false} required={true}
-                rows={1} value={username} type={"text"} onChange={inputUsername}
+                rows={1} value={name} type={"text"} onChange={inputName}
             />
             <TextInput
                 fullWidth={true} label={"職種"} multiline={false} required={false}
@@ -71,7 +71,7 @@ const SignUp = () => {
             <div className="center">
                 <PrimaryButton
                     label={"アカウントを登録する"}
-                    onClick={() => dispatch(signUp(username, occupation, organization, email, password, confirmPassword))}
+                    onClick={() => dispatch(signUp(name, occupation, organization, email, password, confirmPassword))}
                 />
                 <div className="module-spacer--medium" />
                 <PrimaryButton

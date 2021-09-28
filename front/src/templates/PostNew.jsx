@@ -5,8 +5,17 @@ import { createPost } from "reducks/posts/operations";
 import { getCategories } from 'reducks/categories/selectors';
 import { fetchCategories } from 'reducks/categories/operations';
 import { getUserId } from 'reducks/currentUser/selectors';
+import { makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles({
+    row: {
+        display: 'flex',
+        justifyContent: 'space-around',
+    },
+})
 
 const PostNew = () => {
+    const classes = useStyles();
     const dispatch = useDispatch();
     const selector = useSelector((state) => state);
     const uid = getUserId(selector);
@@ -47,8 +56,8 @@ const PostNew = () => {
 
     return (
         <section>
-            <h2 className="u-text__headline u-text-center">テンプレートの作成</h2>
             <div className="c-section-container">
+                <h2 className="u-text__headline u-text-center">テンプレートの作成</h2>
                 <TextInput
                     fullWidth={true} label={"タイトル"} multiline={false} required={true}
                     onChange={inputTitle} rows={1} value={title} type={"text"}
@@ -73,9 +82,13 @@ const PostNew = () => {
                     onChange={inputTips} rows={5} value={tips} type={"text"}
                 />
                 <div className="module-spacer--small"/>
-                <div className="center">
+                <div className={classes.row}>
                     <PrimaryButton
                         label={"投稿する"}
+                        onClick={() => dispatch(createPost( uid, title, subject, category, contentEnglish, contentJapanese, tips ))}
+                    />
+                    <PrimaryButton
+                        label={"メモとして保存する"}
                         onClick={() => dispatch(createPost( uid, title, subject, category, contentEnglish, contentJapanese, tips ))}
                     />
                 </div>

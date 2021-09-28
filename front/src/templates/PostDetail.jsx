@@ -1,67 +1,56 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
-import { getPosts } from 'reducks/posts/selectors'
-import { fetchPosts } from 'reducks/posts/operations';
-import { push } from 'connected-react-router';
-import { SmallButton } from 'components/UIkit/index';
-import { TextDetail } from 'components/UIkit/index';
 import { Divider } from '@material-ui/core';
 import { PrimaryButton } from 'components/UIkit/index';
 import { createComment } from 'reducks/posts/operations';
+import { fetchPosts } from 'reducks/posts/operations';
+import { fetchLikes } from 'reducks/likes/operations';
 import { TextInput } from 'components/UIkit/index';
-import axios from 'axios';
 import { CommentDetail } from 'components/Posts/index';
-import { getUserId } from 'reducks/currentUser/selectors';
-import { fetchUsers } from 'reducks/users/operations';
+import { PostCardDetail } from 'components/Posts/index';
+import { SmallButton } from 'components/UIkit/index';
+import axios from 'axios';
+import no_profile from 'assets/img/src/no_profile.png';
+import { getUser } from 'reducks/currentUser/selectors';
+import { push } from 'connected-react-router';
+import { Like } from 'components/Posts/index';
+import { getPosts } from 'reducks/posts/selectors';
 
-const useStyles = makeStyles((theme) => ({
-    detail: {
-        textAlign: 'left',
-        [theme.breakpoints.down('sm')]: {
-            margin: '0 auto 16px auto',
-            height: 'flex',
-            width: 'flex',
-        },
-        [theme.breakpoints.up('sm')]: {
-            margin: '0 auto',
-            height: 'flex',
-            width: 'flex',
-        },
-        textField: {
+const useStyles = makeStyles({
+    textField: {
             width: 500,
-        }
     },
-}))
+    icon: {
+            height: 48,
+            width: 48
+    }
+});
 
 const PostDetail = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
     const selector = useSelector((state) => state);
-    const posts = getPosts(selector);
-    const uid = getUserId(selector);
-    const id = window.location.pathname.split('/posts/detail/')[1];      
+    const user = getUser(selector);
+    const id = selector.router.location.pathname.split('/posts/detail/')[1];
+    const [posts, setPosts] = useState(null)
+    const postsAll = getPosts(selector)
     const post = posts.find((element) => element.id === Number(id))
-    
-    const [title, setTitle] = useState(""),
-          [subject, setSubject] = useState(""),
-          [category, setCategory] = useState(""),
-          [contentEnglish, setContentEnglish] = useState(""),
-          [contentJapanese, setContentJapanese] = useState(""),
-          [tips, setTips] = useState(""),
-          [comment, setComment] = useState(""),
+
+    useEffect(() => {
+        dispatch(fetchPosts())
+        setPosts(postsAll)
+    },[]);
+
+    const [comment, setComment] = useState(""),
           [comments, setComments] = useState([]);
 
-
-    const fetchComments = (id) => {
+    const fetchComments = () => {
         return async () => {
         const apiUrl = process.env.REACT_APP_API_V1_URL + '/comments'
-        const data = {
-            post_id: id
-        }
 
         await axios
-            .get(apiUrl, data, {
+            .get(apiUrl, {
             headers: {
                 'access-token': localStorage.getItem('access_token'),
                 client: localStorage.getItem('client'),
@@ -70,7 +59,8 @@ const PostDetail = () => {
             })
             .then((response) => {
             const commentData = response.data.data
-            setComments(commentData)
+            const data = commentData.filter((element) => element.post_id === Number(id))
+            setComments(data)
             })
             .catch((error) => {
             console.log('error', error)
@@ -79,18 +69,9 @@ const PostDetail = () => {
     };
 
     useEffect(() => {
-        dispatch(fetchPosts()),
-        dispatch(fetchUsers()),
-        dispatch(fetchComments(id))
-    },[]);
-
-    useEffect(() => {
-        setTitle(post.title)
-        setSubject(post.subject)
-        setCategory(post.category)
-        setContentEnglish(post.content_en)
-        setContentJapanese(post.content_ja)
-        setTips(post.tips)
+        dispatch(fetchPosts())
+        dispatch(fetchLikes())
+        dispatch(fetchComments())
     },[]);
 
     const inputComment = useCallback((event) => {
@@ -99,31 +80,31 @@ const PostDetail = () => {
 
     return (
         <>
-            <section className="c-section-wrapin">
-                {post && (
-                    <div className="p-grid__column">
-                        <div className={classes.detail}>
-                            <TextDetail label={"title"} value={title}/>
-                            <TextDetail label={"category"} value={category}/>
-                            <TextDetail label={"subject"} value={subject}/>
-                            <TextDetail label={"English"} value={contentEnglish}/>
-                            <TextDetail label={"Japanese"} value={contentJapanese}/>
-                            <TextDetail label={"tips"} value={tips}/>
-                        </div>
-                    </div>
-                )}
-                <div className="left">
-                    <SmallButton
-                        label={"編集"}
-                        onClick={() => dispatch(push('/posts/edit/' + id))}
-                    />
-                </div>
-            </section>
+        <section className="c-section-wrapin">
+            <PostCardDetail 
+                id={post.id} key={post.id} title={post.title} category={post.category} subject={post.subject} 
+                contentEnglish={post.content_en} contentJapanese={post.content_ja}
+                tips={post.tips}
+            />
+        <div className="left">
+            <SmallButton
+                label={"編集"}
+                onClick={() => dispatch(push('/posts/edit/' + id))}
+            />
+            <Like user_id={user.uid} post_id={post.id}/>
+        </div>
+        <div className="module-spacer--extra-small"/>
+        </section>
             <Divider />
             <div className="center">
                 <p>投稿者</p>
-                <p>Name</p>
-                <p>職種：</p>
+                <div className="module-spacer--extra-extra-small"/>
+                {user.image === "" ? <img alt="user_picture" src={user.image} className={classes.icon} onClick={() => dispatch(push('/'))} role="button" />
+                : <img alt="no_image_picture" src={no_profile} className={classes.icon} onClick={() => dispatch(push('/users/' + String(user.uid)))} role="button" /> }
+                <div className="module-spacer--extra-extra-small"/>
+                <p>{user.name}</p>
+                <div className="module-spacer--extra-extra-small"/>
+                <p>職種：{user.occupation}</p>
             </div>
             <Divider />
             <div className="center">
@@ -145,7 +126,7 @@ const PostDetail = () => {
                 <br></br>
                 <PrimaryButton
                     label={"コメントする"}
-                    onClick={() => dispatch(createComment(uid, id, comment))}
+                    onClick={() => dispatch(createComment(user.uid, id, comment))}
                 />
             </div>
         </>

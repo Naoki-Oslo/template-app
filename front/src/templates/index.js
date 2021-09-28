@@ -8,3 +8,4 @@ export {default as PostNew} from './PostNew';
 export {default as UserEdit} from './UserEdit';
 export {default as UserList} from './UserList';
 export {default as UserMyPage} from './UserMyPage';
+export {default as TopPage} from './TopPage';

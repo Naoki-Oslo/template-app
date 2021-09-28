@@ -10,6 +10,17 @@ export const initialState = {
         message: '',
     },
 
+    currentUser: {
+        isSignedIn: false,
+        role: "",
+        uid: "",
+        name: "",
+        occupation: "",
+        organization: "",
+        profile: "",
+        image: "",
+    },
+
     posts: {
         list: []
     },
@@ -18,15 +29,12 @@ export const initialState = {
         list: []
     },
 
-    currentUser: {
-        isSignedIn: false,
-        role: "",
-        uid: "",
-        username: "",
-        occupation: "",
-        organization: "",
-        profile: "",
-        image: "",
+    likes: {
+        list: []
+    },
+
+    favorites: {
+        list: []
     },
 
     users: {

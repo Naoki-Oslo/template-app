@@ -8,6 +8,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import NoteAddIcon from '@material-ui/icons/NoteAdd';
 import { getUserId } from 'reducks/currentUser/selectors';
+import Tooltip from '@mui/material/Tooltip';
 
 const HeaderMenu = (props) => {
     const dispatch = useDispatch();
@@ -16,26 +17,34 @@ const HeaderMenu = (props) => {
 
     return (
         <>  
-            <IconButton onClick={() => dispatch(push('/users/' + String(userId)))}>
-                <AccountCircleIcon />
-            </IconButton>
-            <IconButton onClick={() => dispatch(push('/'))}>
-                <Badge badgeContent={1} color="secondary">
-                    <NotificationsNoneIcon />
-                </Badge>
-            </IconButton>
-            <IconButton  onClick={() => dispatch(push('/posts/new'))}>
-                <NoteAddIcon />
-            </IconButton>
-            <IconButton
-                aria-label="Menu Items"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={(e) => props.handleDrawerToggle(e, true)}
-                color="inherit"
-            >
-                <MenuIcon />
-            </IconButton>
+            <Tooltip title="マイページ">
+                <IconButton onClick={() => dispatch(push('/users/' + String(userId)))}>
+                    <AccountCircleIcon />
+                </IconButton>
+            </Tooltip>
+            <Tooltip title="通知一覧">
+                <IconButton onClick={() => dispatch(push('/'))}>
+                    <Badge badgeContent={1} color="secondary">
+                        <NotificationsNoneIcon />
+                    </Badge>
+                </IconButton>
+            </Tooltip>
+            <Tooltip title="新規作成">
+                <IconButton  onClick={() => dispatch(push('/posts/new'))}>
+                    <NoteAddIcon />
+                </IconButton>
+            </Tooltip>
+            <Tooltip title="メニューバー">
+                <IconButton
+                    aria-label="Menu Items"
+                    aria-controls="menu-appbar"
+                    aria-haspopup="true"
+                    onClick={(e) => props.handleDrawerToggle(e, true)}
+                    color="inherit"
+                >
+                    <MenuIcon />
+                </IconButton>
+            </Tooltip>
         </>
     );
 };
