@@ -19,21 +19,6 @@ const UserMyPage = () => {
     const dispatch = useDispatch();
     const selector = useSelector((state) => state);
     const user = getUser(selector);
-    
-//    const currentUserPosts = userPosts.filter(userPost => {
-//        return userPost.uid === userId
-//    })
-
-//   画像の有無に応じた表示切り替えをreturn先頭に挿入する
-//   <div class="my-auto">
-//    <% if @user.image? %>
-//      <%= image_tag @user.image.url, class: "large-icon" %>
-//    <% else %>
-//      <%= image_tag asset_path('default_user.png'), class: "large-icon" %>
-//    <% end %>
-//    <p class="text-lg text-black my-2"><%= @user.name %></p>
-//    <p class="text-xs my-2">職種：<%= @user.occupation %></p>
-//   </div>
 
     return (
         <div>

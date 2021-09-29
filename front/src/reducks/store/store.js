@@ -8,6 +8,7 @@ import { UsersReducer } from 'reducks/users/reducers';
 import { CurrentUserReducer } from 'reducks/currentUser/reducers';
 import { CategoriesReducer } from 'reducks/categories/reducers';
 import { LikesReducer } from 'reducks/likes/reducers';
+import { MemosReducer } from 'reducks/memos/reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -22,6 +23,7 @@ export default function createStore(history) {
             categories: CategoriesReducer,
             users: UsersReducer,
             likes: LikesReducer,
+            memos: MemosReducer,
         }),
         composeEnhancers(applyMiddleware(routerMiddleware(history), thunk))
     );

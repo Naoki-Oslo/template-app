@@ -9,3 +9,4 @@ export {default as UserEdit} from './UserEdit';
 export {default as UserList} from './UserList';
 export {default as UserMyPage} from './UserMyPage';
 export {default as TopPage} from './TopPage';
+export {default as MemoEdit} from './MemoEdit';

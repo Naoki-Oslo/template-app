@@ -1,14 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPosts } from 'reducks/posts/selectors';
+import { getMemos } from 'reducks/memos/selectors';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { PostCard } from 'components/Posts/index';
+import { MemoCard } from 'components/Memos/index';
 import { getUserId } from 'reducks/currentUser/selectors';
 import { fetchPosts } from 'reducks/posts/operations';
+import { fetchMemos } from 'reducks/memos/operations';
 import { PaginationButtons } from 'components/UIkit/index';
 
 function TabPanel(props) {
@@ -48,6 +51,7 @@ const NavTabs = () => {
   const [value, setValue] = useState(0);
   const dispatch = useDispatch();
   const selector = useSelector((state) => state);
+  const memos = getMemos(selector);
   const postsAll = getPosts(selector);
   const uid = getUserId(selector);
   const posts = postsAll.filter((element) => element.user_id === uid)
@@ -62,6 +66,7 @@ const NavTabs = () => {
 
   useEffect(() => {
       dispatch(fetchPosts())
+      dispatch(fetchMemos())
   },[])
 
   useEffect(() => {
@@ -91,8 +96,7 @@ const NavTabs = () => {
               posts.slice(start, start + perPage).map(post => (
               <PostCard
                   id={post.id} key={post.id} title={post.title} category={post.category} subject={post.subject} 
-                  contentEnglish={post.content_en} contentJapanese={post.content_ja}
-                  tips={post.tips}
+                  contentEnglish={post.content_en} contentJapanese={post.content_ja} tips={post.tips}
               />
           )))}
           </div>
@@ -111,7 +115,17 @@ const NavTabs = () => {
         開発中
       </TabPanel>
       <TabPanel value={value} index={3}>
-        開発中
+        <section className="c-section-wrapin">
+          <div className="p-grid__row">
+          {memos.length > 0 && (
+              memos.map(memo => (
+              <MemoCard
+                  id={memo.id} key={memo.id} title={memo.title} category={memo.category} subject={memo.subject} 
+                  contentEnglish={memo.content_en} contentJapanese={memo.content_ja} tips={memo.tips}
+              />
+          )))}
+          </div>
+        </section>
       </TabPanel>
     </Box>
   );

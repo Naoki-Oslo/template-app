@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
-import { SignIn, SignUp, UserMyPage, UserEdit, UserList, PostNew, PostList, PostDetail, PostEdit, TopPage } from "./templates/index";
+import { SignIn, SignUp, UserMyPage, UserEdit, UserList, PostNew, PostList, PostDetail, PostEdit, TopPage, MemoEdit } from "./templates/index";
 import Auth from 'Auth';
 
 const NotFound = () => {
@@ -24,6 +24,7 @@ const NotFound = () => {
                 <Route exact path={'/posts/new'} component={PostNew} />
                 <Route exact path={'/posts/list(/?)'} component={PostList} />
                 <Route path={'/posts/edit(/:id)?'} component={PostEdit} />
+                <Route path={'/memos/edit(/:id)?'} component={MemoEdit} />
             </Auth>
 
             <Route component={NotFound}/>

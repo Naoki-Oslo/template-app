@@ -3,18 +3,18 @@ import { push } from 'connected-react-router'
 import { _sleep } from 'function/common'
 import { hideLoadingAction, showLoadingAction } from 'reducks/loading/actions'
 import { setNotificationAction } from 'reducks/notification/actions'
-import { fetchPostsAction, deletePostAction, createPostsAction, updatePostsAction } from './actions'
+import { fetchMemosAction, deleteMemosAction, createMemosAction, updateMemosAction } from './actions'
 
 require('dotenv').config();
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = 'REACT_APP_BASE_URL';
 
 let notificationContent = {}
 
-// テンプレートを削除
-export const deletePost = (id) => {
+// メモを削除
+export const deleteMemo = (id) => {
   return async (dispatch) => {
-    dispatch(showLoadingAction('テンプレートを削除しています...'))
-    const apiUrl = process.env.REACT_APP_API_V1_URL + '/posts' + String(id)
+    dispatch(showLoadingAction('メモを削除しています...'))
+    const apiUrl = process.env.REACT_APP_API_V1_URL + '/memos/' + String(id)
 
     await axios
       .delete(apiUrl, {
@@ -26,11 +26,11 @@ export const deletePost = (id) => {
       })
       .then((response) => {
         const data = response.data.data
-        dispatch(deletePostAction(data))
-        dispatch(push('/posts/list'))
+        dispatch(deleteMemosAction(data))
+        dispatch(push('/users/' + id))
         notificationContent = {
           variant: 'success',
-          message: 'テンプレートを削除しました',
+          message: 'メモを削除しました',
         }
       })
       .catch((error) => {
@@ -47,11 +47,11 @@ export const deletePost = (id) => {
   }
 }
 
-// posts全体を取得する
-export const fetchPosts = (category) => {
+// memos全体を取得する
+export const fetchMemos = () => {
   return async (dispatch) => {
 
-    const apiUrl = process.env.REACT_APP_API_V1_URL + '/posts'
+    const apiUrl = process.env.REACT_APP_API_V1_URL + '/memos'
 
     await axios
       .get(apiUrl, { 
@@ -62,9 +62,8 @@ export const fetchPosts = (category) => {
         },
       })
       .then((response) => {
-        const data = response.data.posts
-        let posts = (category === "") ? data : data.filter((element) => element.category === category.name)
-        dispatch(fetchPostsAction(posts))
+        const data = response.data.data
+        dispatch(fetchMemosAction(data))
       })
       .catch((error) => {
         console.log('error', error)
@@ -74,24 +73,24 @@ export const fetchPosts = (category) => {
 
 
 // posts全体を取得、初回レンダー時のみ使用
-export const initialFetchPosts = () => {
+export const initialFetchMemos = () => {
     return async (dispatch) => {
-        dispatch(showLoadingAction('テンプレート情報を取得中...'))
-        dispatch(fetchPosts())
+        dispatch(showLoadingAction('メモ情報を取得中...'))
+        dispatch(fetchMemos())
         await _sleep(1000)
         dispatch(hideLoadingAction())
     }
 };
 
 
-// テンプレートを新規登録
-export const createPost = (uid, title, subject, category, contentEnglish, contentJapanese, tips) => {
+// メモを新規登録
+export const createMemo = (uid, title, subject, category, contentEnglish, contentJapanese, tips) => {
   return async (dispatch) => {
 
-    dispatch(showLoadingAction('テンプレートを登録中...'))
+    dispatch(showLoadingAction('メモを登録中...'))
 
-    const apiUrl = process.env.REACT_APP_API_V1_URL + '/posts'
-    const postData = {
+    const apiUrl = process.env.REACT_APP_API_V1_URL + '/memos'
+    const memoData = {
         user_id: uid,
         title: title,
         category: category,
@@ -102,7 +101,7 @@ export const createPost = (uid, title, subject, category, contentEnglish, conten
     }
 
     await axios
-        .post(apiUrl, postData, {
+        .post(apiUrl, memoData, {
             headers: {
                 'access-token': localStorage.getItem('auth_token'),
                 client: localStorage.getItem('client'),
@@ -111,18 +110,19 @@ export const createPost = (uid, title, subject, category, contentEnglish, conten
         })
         .then((response) => {
             const data = response.data.data
-            dispatch(createPostsAction(data))
+            dispatch(createMemosAction(data))
+            dispatch(push('/users/' + uid))
             dispatch(push('/posts/list'))
             notificationContent = {
               variant: 'success',
-              message: '投稿に成功しました',
+              message: 'メモを作成しました',
             }
         })
         .catch((error) => {
             console.log('error', error)
             notificationContent = {
                 variant: 'error',
-                message: '投稿に失敗しました',
+                message: '作成に失敗しました',
             }
         })
     await _sleep(2500)
@@ -133,13 +133,13 @@ export const createPost = (uid, title, subject, category, contentEnglish, conten
 };
 
 
-// テンプレートを更新
-export const updatePost = (uid, id, title, subject, category, contentEnglish, contentJapanese, tips) => {
+// メモを更新
+export const updateMemo = (uid, id, title, subject, category, contentEnglish, contentJapanese, tips) => {
     return async (dispatch) => {
   
-      dispatch(showLoadingAction('テンプレートを更新中...'))
+      dispatch(showLoadingAction('メモを更新中...'))
   
-      const apiUrl = process.env.REACT_APP_API_V1_URL + '/posts/' + String(id)
+      const apiUrl = process.env.REACT_APP_API_V1_URL + '/memos/' + String(id)
       const updateData = {
           user_id: uid,  
           id: id,
@@ -160,13 +160,12 @@ export const updatePost = (uid, id, title, subject, category, contentEnglish, co
               },
           })
           .then((response) => {
-              // responseには、@posts = Post.allを受け取っている
               const data = response.data.data
-              dispatch(updatePostsAction(data))
-              dispatch(push('/posts/list'))
+              dispatch(updateMemosAction(data))
+              dispatch(push('/users/' + uid))
               notificationContent = {
                 variant: 'success',
-                message: 'テンプレートを更新しました',
+                message: 'メモを更新しました',
               }
           })
           .catch((error) => {
@@ -182,46 +181,4 @@ export const updatePost = (uid, id, title, subject, category, contentEnglish, co
       await _sleep(300)
       dispatch(setNotificationAction(...Object.values(notificationContent)))
     }
-};
-
-
-// コメントを新規投稿
-export const createComment = (uid, id, comment) => {
-  return async (dispatch) => {
-
-    dispatch(showLoadingAction('コメントを登録中...'))
-
-    const apiUrl = process.env.REACT_APP_API_V1_URL + '/comments'
-    const commentData = {
-        user_id: uid,
-        post_id: id,
-        comment: comment,
-    }
-
-    await axios
-        .post(apiUrl, commentData, {
-            headers: {
-                'access-token': localStorage.getItem('auth_token'),
-                client: localStorage.getItem('client'),
-                uid: localStorage.getItem('uid'),
-            },
-        })
-        .then(() => {
-            notificationContent = {
-              variant: 'success',
-              message: 'コメントを作成しました',
-            }
-        })
-        .catch((error) => {
-            console.log('error', error)
-            notificationContent = {
-                variant: 'error',
-                message: 'コメント作成に失敗しました',
-            }
-        })
-    await _sleep(2500)
-    dispatch(hideLoadingAction())
-    await _sleep(300)
-    dispatch(setNotificationAction(...Object.values(notificationContent)))
-  }
 };

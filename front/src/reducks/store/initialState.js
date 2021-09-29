@@ -25,6 +25,10 @@ export const initialState = {
         list: []
     },
 
+    memos: {
+        list: []
+    },
+
     categories: {
         list: []
     },

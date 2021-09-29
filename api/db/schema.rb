@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_20_033816) do
+ActiveRecord::Schema.define(version: 2021_09_28_160223) do
 
   create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -42,6 +42,20 @@ ActiveRecord::Schema.define(version: 2021_09_20_033816) do
     t.integer "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "memos", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "content_ja", null: false
+    t.text "content_en", null: false
+    t.string "category", null: false
+    t.string "title", null: false
+    t.text "tips", null: false
+    t.string "subject", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "created_at"], name: "index_memos_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_memos_on_user_id"
   end
 
   create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -90,5 +104,6 @@ ActiveRecord::Schema.define(version: 2021_09_20_033816) do
   add_foreign_key "comments", "users"
   add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
+  add_foreign_key "memos", "users"
   add_foreign_key "posts", "users"
 end

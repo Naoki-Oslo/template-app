@@ -1,5 +1,4 @@
 class Api::V1::PostsController < ApplicationController
-    #before_action :authenticate_api_v1_user!, only: [:index, :show, :edit, :create, :update, :destroy]
 
     def create
         @post = Post.create(post_params)

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
 import { Divider } from '@material-ui/core';
 import { PrimaryButton } from 'components/UIkit/index';
-import { createComment } from 'reducks/posts/operations';
+import { createComment, deletePost } from 'reducks/posts/operations';
 import { fetchPosts } from 'reducks/posts/operations';
 import { fetchLikes } from 'reducks/likes/operations';
 import { TextInput } from 'components/UIkit/index';
@@ -91,6 +91,12 @@ const PostDetail = () => {
                 label={"編集"}
                 onClick={() => dispatch(push('/posts/edit/' + id))}
             />
+            {(post.user_id === user.uid) && (
+                <SmallButton
+                    label={"削除"}
+                    onClick={() => dispatch(deletePost(id))}
+                />
+            )}
             <Like user_id={user.uid} post_id={post.id}/>
         </div>
         <div className="module-spacer--extra-small"/>

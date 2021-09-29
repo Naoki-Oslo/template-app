@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const PostCard = (props) => {
+const MemoCard = (props) => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
@@ -43,8 +43,8 @@ const PostCard = (props) => {
             </CardContent>
             <CardContent className={classes.button}>
                 <SmallButton
-                    label={"詳細を表示"}
-                    onClick={() => {dispatch(push('/posts/detail/' + props.id))}}
+                    label={"編集"}
+                    onClick={() => {dispatch(push('/memos/edit/' + props.id))}}
                 />
             </CardContent>
         </Card>
@@ -53,4 +53,4 @@ const PostCard = (props) => {
  );
 }
 
-export default PostCard;
+export default MemoCard;
