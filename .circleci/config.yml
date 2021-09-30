@@ -6,7 +6,7 @@ jobs:
       - image: circleci/ruby:3.0.2
         environment:
           RAILS_ENV: test
-          host: db
+          DB_HOST: 127.0.0.1
       - image: circleci/mysql:5.7
         environment:
           MYSQL_ROOT_PASSWORD: password
@@ -16,18 +16,6 @@ jobs:
 
     steps:
       - checkout
-
-      # Database setup
-      - run:
-          command: bundle exec rails db:create
-          working_directory: ~/template-app/api
-      - run:
-          command: bundle exec rails db:migrate
-          working_directory: ~/template-app/api
-      - run:
-          name: create directory to store test results
-          command: mkdir /tmp/test-results
-          working_directory: ~/template-app/api
 
       # restore gem from cache
       #- restore_cache:
@@ -48,6 +36,18 @@ jobs:
           key: gem-cache-v1-{{ checksum "~/template-app/api/Gemfile.lock" }}
           paths:
             - api/vendor/bundle
+          working_directory: ~/template-app/api
+
+      # Database setup
+      - run:
+          command: bundle exec rails db:create
+          working_directory: ~/template-app/api
+      - run:
+          command: bundle exec rails db:migrate
+          working_directory: ~/template-app/api
+      - run:
+          name: create directory to store test results
+          command: mkdir /tmp/test-results
           working_directory: ~/template-app/api
 
       # run tests
