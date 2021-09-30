@@ -62,7 +62,7 @@ export const fetchPosts = (category) => {
         },
       })
       .then((response) => {
-        const data = response.data.posts
+        const data = response.data.data
         let posts = (category === "") ? data : data.filter((element) => element.category === category.name)
         dispatch(fetchPostsAction(posts))
       })
@@ -160,7 +160,6 @@ export const updatePost = (uid, id, title, subject, category, contentEnglish, co
               },
           })
           .then((response) => {
-              // responseには、@posts = Post.allを受け取っている
               const data = response.data.data
               dispatch(updatePostsAction(data))
               dispatch(push('/posts/list'))

@@ -9,9 +9,9 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.string :subject, null: false
 
       t.references :user, null: false, foreign_key: true
-      
+
       t.timestamps
     end
-    add_index :posts, [:user_id, :created_at]
+    add_index :posts, %i[user_id created_at]
   end
 end

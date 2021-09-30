@@ -9,9 +9,9 @@ class CreateMemos < ActiveRecord::Migration[6.1]
       t.string :subject, null: false
 
       t.references :user, null: false, foreign_key: true
-      
+
       t.timestamps
     end
-    add_index :memos, [:user_id, :created_at]
+    add_index :memos, %i[user_id created_at]
   end
 end

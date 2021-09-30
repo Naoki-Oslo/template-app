@@ -3,12 +3,12 @@ require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
-  config.asset_host = "http://localhost:8000"
+  config.asset_host = 'http://localhost:8000'
   config.storage = :file
   config.cache_storage = :file
 end
 
-#CarrierWave.configure do |config|
+# CarrierWave.configure do |config|
 #  config.storage = :fog
 #  config.fog_provider = "fog/aws"
 #  config.fog_directory = ENV["AWS_S3_BUCKET_NAME"]
@@ -23,10 +23,10 @@ end
 
 #  config.fog_public     = true
 #  config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }
-  # config.asset_host = ENV['AWS_S3_BUCKET_URL']
+# config.asset_host = ENV['AWS_S3_BUCKET_URL']
 
 #    case Rails.env
-    
+
 #    when 'production'
 #        config.fog_directory = ENV['AWS_S3_BUCKET_NAME'] + '-image-store'
 #        config.asset_host = 'https://' + ENV['AWS_S3_BUCKET_NAME'] + '-image-store.s3-ap-northeast-1.amazonaws.com'
@@ -39,7 +39,7 @@ end
 #        config.fog_directory = 'dev-' + ENV['AWS_S3_BUCKET_NAME'] + '-image-store'
 #        config.asset_host = 'https://dev-' + ENV['AWS_S3_BUCKET_NAME'] + '-image-store.s3-ap-northeast-1.amazonaws.com'
 #    end
-#end
+# end
 
 # 日本語ファイル名の設定
-#CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
+# CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
