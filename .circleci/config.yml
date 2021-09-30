@@ -9,17 +9,17 @@ jobs:
           DB_HOST: 127.0.0.1
       - image: circleci/mysql:5.7.30
 
-    working_directory: ~/api
+    working_directory: ~/template-app/api
 
     steps:
       - checkout
 
       # restore gem from cache
-      - restore_cache:
-          keys:
-            - gem-cache-v1-{{ checksum "~/api/Gemfile.lock" }}
-            - gem-cache-v1-
-          working_directory: ~/api
+      #- restore_cache:
+      #    keys:
+      #      - gem-cache-v1-{{ checksum "~/api/Gemfile.lock" }}
+      #      - gem-cache-v1-
+      #    working_directory: ~/template-app/api
 
       # gem install
       - run:
@@ -27,26 +27,26 @@ jobs:
             gem install bundler
             bundle config set path 'vendor/bundle'
             bundle install --jobs=4 --retry=3
-          working_directory: ~/api
+          working_directory: ~/template-app/api
 
       - save_cache:
-          key: gem-cache-v1-{{ checksum "~/api/Gemfile.lock" }}
+          key: gem-cache-v1-{{ checksum "~/template-app/api/Gemfile.lock" }}
           paths:
             - api/vendor/bundle
-          working_directory: ~/api
+          working_directory: ~/template-app/api
 
       # Database setup
       - run:
           command: bundle exec rails db:create
-          working_directory: ~/api
+          working_directory: ~/template-app/api
       - run:
           command: bundle exec rails db:migrate
-          working_directory: ~/api
+          working_directory: ~/template-app/api
 
       - run:
           name: create directory to store test results
           command: mkdir /tmp/test-results
-          working_directory: ~/api
+          working_directory: ~/template-app/api
 
       # run tests
       - run:
@@ -54,7 +54,7 @@ jobs:
           command: |
             bundle exec rspec $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings) \
               || (printf "====== RETRYING...\n\n\n"; bundle exec rspec --only-failures)
-          working_directory: ~/api
+          working_directory: ~/template-app/api
 
       # collect reports
       - store_test_results:
@@ -71,27 +71,27 @@ jobs:
         environment:
           NODE_ENV: test
 
-    working_directory: ~/front
+    working_directory: ~/template-app/front
 
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "~/front/package.json" }}
-          working_directory: ~/front
+    #  - restore_cache:
+    #      keys:
+    #        - v1-dependencies-{{ checksum "~/template-app/front/package.json" }}
+    #      working_directory: ~/template-app/front
       - run:
           name: install-packages
           command: npm install
-          working_directory: ~/front
+          working_directory: ~/template-app/front
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "~/front/package.json" }}
-          working_directory: ~/front
+          key: v1-dependencies-{{ checksum "~/template-app/front/package.json" }}
+          working_directory: ~/template-app/front
       - run:
           name: test
           command: npm run test
-          working_directory: ~/front
+          working_directory: ~/template-app/front
 
 workflows:
   version: 2
