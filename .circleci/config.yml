@@ -9,7 +9,7 @@ jobs:
           DB_HOST: 127.0.0.1
       - image: circleci/mysql:5.7.30
 
-    working_directory: ~/template-app/api
+    working_directory: ~/template-app
 
     steps:
       - checkout
@@ -71,7 +71,7 @@ jobs:
         environment:
           NODE_ENV: test
 
-    working_directory: ~/template-app/front
+    working_directory: ~/template-app
 
     steps:
       - checkout
