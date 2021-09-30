@@ -6,7 +6,7 @@ jobs:
       - image: circleci/ruby:3.0.2
         environment:
           RAILS_ENV: test
-          DB_HOST: 127.0.0.1
+          host: db
       - image: circleci/mysql:5.7
         environment:
           MYSQL_ROOT_PASSWORD: password
@@ -16,6 +16,18 @@ jobs:
 
     steps:
       - checkout
+
+      # Database setup
+      - run:
+          command: bundle exec rails db:create
+          working_directory: ~/template-app/api
+      - run:
+          command: bundle exec rails db:migrate
+          working_directory: ~/template-app/api
+      - run:
+          name: create directory to store test results
+          command: mkdir /tmp/test-results
+          working_directory: ~/template-app/api
 
       # restore gem from cache
       #- restore_cache:
@@ -38,19 +50,6 @@ jobs:
             - api/vendor/bundle
           working_directory: ~/template-app/api
 
-      # Database setup
-      - run:
-          command: bundle exec rails db:create
-          working_directory: ~/template-app/api
-      - run:
-          command: bundle exec rails db:migrate
-          working_directory: ~/template-app/api
-
-      - run:
-          name: create directory to store test results
-          command: mkdir /tmp/test-results
-          working_directory: ~/template-app/api
-
       # run tests
       - run:
           name: RSpec
@@ -65,8 +64,6 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
-      - store_artifacts:
-          path: /home/circleci/repo/tmp/screenshots
 
   test_front:
     docker:
