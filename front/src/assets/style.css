@@ -1,6 +1,6 @@
 /*********** Module Spacer ***********/
 .module-spacer--extra-extra-small {
-    height: 12px
+    height: 8px
 }
 .module-spacer--extra-small {
     height: 12px
@@ -27,9 +27,17 @@
 
 .c-section-container {
     margin: 0 auto;
-    max-width: 550px;
+    max-width: 500px;
     padding: 1rem;
-    height: auto;
+    height: 300px;
+    width: calc(100% - 2rem);
+}
+
+.c-section-swiper {
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 1rem;
+    height: 400px;
     width: calc(100% - 2rem);
 }
 
@@ -89,7 +97,7 @@
 .p-media__thumb {
     position: relative;
     overflow: hidden;
-    width: 30%
+    width: 50%
 }
 
 .p-media__thumb::before {
@@ -106,6 +114,15 @@
     left: 0;
     width: 100%;
     height: auto;
+}
+
+/*********** Swiper ***********/
+
+.swiper-container {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin: 0 auto;
 }
 
 /*********** Footer ***********/

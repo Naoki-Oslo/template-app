@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import IconButton from '@mui/material/IconButton';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import IconButton from '@material-ui/core/IconButton';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import { createLikes, deleteLikes } from 'reducks/likes/operations';
 import { getLikes } from 'reducks/likes/selectors';
 import { fetchLikes } from 'reducks/likes/operations';
@@ -32,12 +32,13 @@ const Like = (props) => {
   return (
         <div>
             <span>いいね！</span>
-                <IconButton onClick={handleLike} aria-label="like">
-                    {likeState ? <FavoriteIcon style={{color: 'red'}}/> : <FavoriteBorderOutlinedIcon/>}
-                </IconButton>
-                {likes.length}
+            <IconButton onClick={handleLike} aria-label="like">
+            {likeState ? <FavoriteIcon style={{color: 'red'}}/> : <FavoriteBorderOutlinedIcon/>}
+            </IconButton>
+            {likes.length}
         </div>
     )
 };
 
 export default Like;
+

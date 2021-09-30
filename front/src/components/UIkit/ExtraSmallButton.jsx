@@ -8,7 +8,7 @@ const useStyles = makeStyles({
         color: "#000",
         fontSize: 10,
         height: 20,
-        width: 100
+        width: 50
     }
 });
 

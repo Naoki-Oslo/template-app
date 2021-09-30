@@ -1,0 +1,493 @@
+id,user_id,title,subject,category,content_ja,content_en,tips
+1,1,商品の資料を請求する,Walnut Series EX-8000,問合せ・見積り,"弊社は東京でオフィス用品・機器を扱っている会社です。
+御社のウェブサイトを拝見し、上記EX-8000に興味を持ちました。
+この製品についてもっとよく知りたいと考えますので、詳しい資料をお送りください。","We are a company dealing in office goods and equipment in Tokyo.
+We saw your website and are interested in the above-mentioned EX-8000.
+We would like to know more about this product, so could you send some detailed information please ?","資料請求や問い合わせをする際に役立ちます。資料請求の文章ををシンプルにまとめました。
+書き出し：自己紹介
+主文：問い合わせのきっかけ
+結び：問い合わせ内容"
+2,1,資料請求に応じる,RE: Walnut Series EX-8000,問合せ・見積り,"弊社製品ウォルナットシリーズ EX-8000 についてお問い合わせいただきありがとうございます。
+更に詳しい資料として製品カタログ1部をさっそく発送いたします。一両日中にはお手元に届くと思います。
+ご質問等ありましたら、いつでもお気軽にお問い合わせください。","Thank you for your inquiry regarding our Walnut SeriesEX-8000.
+We will immediately send you a copy of the product catalog containing more detailed information. It should reach you within a day or two.
+If you have any questions, please feel free to contact us at any time.",問い合わせへの返信。
+3,1,見積もりを依頼する,EX-8000-DK-3 and DK-6 Quotation,問合せ・見積り,"御社のカタログを受け取り、拝見しました。
+EX-8000-DK-3, DK-6 の購入について検討しています。下記の数量にて見積もりをお願いいたします。
+EX-8000-DK-3 : 20 台
+EX-8000-DK-6 : 30 台
+お返事お待ちしています。","We have received and looked through your catalog.
+We are considering purchasing the EX-8000-DK-3 and DK-6. Could you send us a quotation for the following quotations?
+EX-8000-DK-3 : 20 units
+EX-8000-DK-6 : 30 units
+We look forward to your reply.","期限を切る場合は以下の定型文が便利です。ご参考まで。
+7月15日までにご回答いただけますと幸いです。
+It would be appreciated if you could reply by July 15th."
+4,1,見積もりを提示する,RE: Quotation for EX-8000-DK-3 and DK-6,問合せ・見積り,"見積もりのご依頼をいただきどうもありがとうございました。
+弊社の見積もりは以下のとおりです。
+EX-8000-DK-3 : 20 台　計：3,000 ドル
+EX-8000-DK-6 : 30 台 　計：6,000 ドル
+本見積もりは20XX年8月15日まで有効です。
+私どものご提案にご満足いただけますことを願っております。ご注文をお待ちしております。","Thank you very much for requesting a quotation.
+Our quotation is as follows.
+EX-8000-DK-3 : 20 units Price: $3,000
+EX-8000-DK-6 : 30 units Price: $6,000
+* note : These prices do not include delivery costs. 
+This quotation will be valid until August 15, 20XX.
+We hope that you find our proposal to be satisfactory. We look forward to receiving you order.",見積もりを提示する場合、期限と注意点を箇条書きで明文化すると親切ですし、誤解を防ぐことができます。
+5,1,商品を注文する,Order for PLANTER,"注文・受領
+","6月14日付のお見積りを拝見しました。
+次の通り正式に注文したいと思います。
+PLANTER (ELEGANCE) 100 台
+PLANTER (ANIMAL) 150 台
+上記商品を航空便で弊社神戸営業所宛にお送りください。本日より2週間以内に発送していただければ幸いです。","We have looked over your quotation dated June 14.
+I would like to officially place an order as follows.
+PLANTER (ELEGANCE) 100 pieces
+PLANTER (ANIMAL) 150 pieces
+Could you please send the above-mentioned products to our Kobe sales office by airmail?
+I would appreciate it if the products could be shipped within two weeks from today.","注文書を添付する場合は以下文章が使えます。ご参考まで。
+
+注文する商品についての注文書を添付いたします。
+I have attached an order form for the products we wish to order."
+6,1,注文に応じる,RE: Order for PLANTER,注文・受領,"PLANTER (ELEGANCE) 100 台, PLANTER (ANIMAL) 150 台のご注文をいただきありがとうございました。
+ご注文の商品は来週月曜日に出荷予定です。その他のご指示についても承知しました。
+弊社製品をご用命いただき大変感謝いたします。今後ともよろしくお願いいたします。","Thank you for placing an order for 100 pieces of PLANTER (ELEGANCE) and 150 pieces of PLANTER (ANIMAL).
+The products you ordered will be shipped on Monday of next week. In addition, your other request requests will also be met.
+We appreciate your order very much and we look forward to having the opportunity to serve you again in the future.","以下 ご参考。
+ご入金の確認が済み次第、発送いたします。
+We will ship the products as soon as we have received payment."
+7,1,注文内容を変更する,RE: Order for PLANTER,注文・受領,"6月18日付のメールでの注文を一部変更したいと思います。
+PLANTER (ANIMAL) の在庫が少ないということなので、これをキャンセルして、代わりに PLANTER (NATURE) 150 台を注文します。
+他の条件は変わりません。迅速に対応していただけると大変ありがたいです。","I would like to change part of the order I placed in my e-mail of June 18.
+I want to cancel the order for PLANTER (ANIMAL) as there is not enough of it in stock, and instead order 150 pieces of PLANTER (NATURE).
+Otherwise, there are no changes. I would be extremely grateful if you could process the order speedily.","参考まで。
+いつも柔軟にご対応いただき大変感謝しています。
+We appreciate very much your flexibility in accommodating our requests."
+8,1,出荷・発送について知らせる,Regarding the shipping of your order,注文・受領,"ご注文の品は6月23日に出荷し7月3日に神戸着の予定です。
+請求書は別途お送りします。受領後2週間以内にお支払いをお願いします。
+発送品に関するご質問などありましたらご遠慮なくお問い合わせください。","The ordered items will be shipped on June 23 and are due to arrive in Kobe on July 3.
+I will send the invoice separately. Please make payment within two weeks of receipt of the invoice.
+If you have any questions regarding the delivered articles, please do not hesitate to contact me.","出荷の予定についてまとめています。以下文はなくてもいいかもしれないですが参考までに。
+
+お手数ですが、商品がお手元に届きましたらその旨お知らせいただけませんか。
+I’m sorry for the trouble, but could you let me know once the items arrive?"
+9,1,納品物の代金を請求する,Request for payment,支払い,"4月分の請求書を添付してお送りいたします。
+いつものように、請求書に記されている口座にご請求金額をお振込みください。
+毎度ご利用いただきまして誠にありがとうございます。今後ともよろしくお願いいたします。","I am sending the invoice for April as an attached document.
+AS always, please remit the billed amount to the bank account noted on the invoice.
+Please accept our deep gratitude for once again using our services. We welcome the opportunity to serve you again in the future.","remit A to B : B に A(金銭) を送る 
+支払期限を伝えたい場合は以下。
+
+請求書受領後10日以内に代金をお支払いください。
+We ask you to pay the amount within 10 days of receiving the invoice."
+10,1,支払い完了を伝える,RE: Request for payment,支払い,"5月12日付の請求書を受け取りました。
+ご指示の通り、5月19日に御社ご指定の口座へ送金いたしました。支払い金額は 45,000 ドル、送金番号は 654321 です。
+送金の受領を確認され次第、ご連絡をいただければ幸いです。","We received the invoice you sent on May 12.
+As instructed, we made a remittance to your indicated company bank account on May 19. The payment amount is $45,000 and the remittance number is 654321.
+We would be grateful if you could let us know as soon as you confirm receipt of payment.","ここでは送金番号だけ書いていますが、国際送金の場合、相手が確認に必要となる送金情報(IBAN code, SWIFT number など)は漏らさず記入するほうがベターだと思います。"
+11,1,入金確認完了を知らせる,RE: Request for payment,支払い,"請求書番号 7856 のお支払いについてのメールをありがとうございました。
+本日、イースト銀行の弊社口座宛に御社から 45,000 ドルの入金があったことを確認いたしました。
+すぐにお支払いいただき感謝しております。","Thank you for your e-mail relating to the payment of invoice number 7856.
+We have confirmed today that you have deposited $45,000 in our account at East Bank.
+We greatly appreciate your prompt payment.",忘れずに連絡すると、次の取引もスムーズだと思います(個人的意見)。
+12,1,代金の支払いを催促する,Regarding the payment (invoice number 7856),支払い,"これは御社のお支払いが期日を過ぎても確認できないことをお知らせするメールです。
+5月31日現在、4月分のご請求金額の入金が確認できておりません。
+御社でもお調べいただき、すみやかにお支払いください。もし5月31日以降にお支払いいただいている場合は、失礼をお詫びいたしますとともに、本メールは無視してくださいますようお願いいたします。","This is to inform you that even though the payment due date has passed we have been unable to confirm your payment.
+As of May 31 we have not been able to confirm payment of the amount billed for April.
+We request that you look into this matter and make payment at your earliest convenience. Should payment have been made after May 31, please accept our apologies and ignore this email.",催促ははっきりと要件を伝えたほうが良いです。なかなか返事が場合は、しつこく催促が必要です。
+13,1,業務提携を申し出る,Inquiry relating to distributorship,契約,"弊社は東京にあるスポーツ用品を扱う企業です。先日、晴海で行われた『国際スポーツ用品フェア』で御社のスノーボードを拝見し好印象を持ちました。
+日本における御社製品の市場価値は大きいと考えます。日本での御社の販売店としてぜひお役に立ちたいと考えております。
+ご参考までに、弊社ウェブサイト(https://www.jsports.org/)をご覧いただき、ご検討いただければ幸いです。","We are a company in sports goods, located in Japan. We recently saw your snowboards at the “International Sports Goods Fair” held in Harumi and were greatly impressed.
+We believe that your products have great marketability here in Japan, and we would very much like to be of service to you as a distributor in Japan.
+For your reference, we would like to ask you to view our website (https://www.jsports.org/) and give this matter your kind consideration.","申し出の場合、書き出しと提案を分けて書くとスッキリします。
+参考までに、以下表現も結びで使えます。
+
+御社から良いお返事がいただけることを期待しております。
+We look forward to receiving a positive reply from you."
+14,1,申し出に応じる,RE: Inquiry relating to distributorship,契約,"2月3日付の販売店に関するご提案をいただきありがとうございました。
+弊社でも御社からのお申し出を大きなビジネスチャンスと捉えており、ぜひ実現に向けて話し合いを進めたいと考えております。
+今回のご提案により、双方が発展的な関係となれますよう願っております。","Thank you very much for your proposal of February 3 with respect to a distributorship.
+We feel that your proposition offers a significant business chance, and we would like to proceed with talks aimed at making this opportunity a reality.
+We hope your proposal will develop into a constructive relationship for both of us.","”いつの”、どの”メールに対する感謝なのかを明記しています。
+書き出しに書くことで、相手にロジックツリーがイメージでき、後のやり取りがスムーズになると思います。"
+15,1,草案を送付する,RE: Inquiry relating to distributorship,契約,"弊社製品の日本における販売契約の件でご連絡申しあげます。
+本件について、契約者の弊社草案を添付いたしました。ご検討くださいますようお願いいたします。
+今月末日までに弊社草案にご同意いただけるかどうかご連絡いただければ幸いです。","I am writing to you regarding the number if a distributor contract for the distribution of our goods in Japan.
+Regarding this matter, I have attached a draft contract prepared by us for your kind consideration.
+It would be most helpful if you could inform us by the end of this month whether the draft contract meets with your approval.","コメントを求める場合、以下のような結びもありです。
+
+御社でのご検討結果を契約書に反映させていきたいと思います。修正案を添えてご返信ください。
+We would like to incorporate the results of your deliberations into the contract. Please send us by attachment a version of the draft contract incorporating your amendments."
+16,1,草案を返送する,RE: Inquiry relating to distributorship,契約,"先日は契約書草案をお送りいただきありがとうございました。
+検討した結果、御社の契約書草案似全て同意いたします。
+正式な契約書をお送りいただければすぐに署名いたします。よろしくお願いいたします。","Thank you for the draft contract you sent to us the other day.
+After due consideration, we agree with all of the content of the draft contract.
+If you can send the official contract to us, we will sign it shortly. Thank you for your cooperation.","修正を加えた場合、以下が使えます。
+
+条項 5 について修正を加えましたのでご検討ください。
+We have made some amendments to Article 5 which we would like you to consider.
+
+当方で変更していただきたい点が全部で 3 ヵ所あります。
+There are three points in total to which we would like to make alternations."
+17,1,仕事を依頼する,Request for sales data,依頼・申請,"ちょっとお願いがあってメールをお送りしました。
+2011年から2014年までの、会社全体の売り上げに関する資料を作って来週水曜日までにメールで送っていただけないでしょうか。
+急なお願いですみませんが、引き受けてもらえると大変助かります。詳しいことはまた後で連絡します。
+ではまた。","I am e-mailing you as I have a small favor to ask.
+Could you put together some material regarding the company’s consolidated sales for 2011-2014 and e-mail it to me by Wednesday next week?
+I am sorry to ask this of you out of the blue, but if you could do this for me, it would be a great help. I will let you know the details later.
+Talk to you soon.","仕事を依頼する際には、以下も使えるかもしれません。ご参考まで。
+
+会社のウェブサイトに載せる原稿の執筆をお願いできないかと思い、このメールを書いています。
+I am writing this e-mail to you to ask if you could draft some material to go on our website.
+
+ちょっと急ぎの用件ができてしまったので手伝ってもらえないでしょうか。
+Something urgent has come up, and I’d be happy if you could help me."
+18,1,依頼に応じる,RE: Request for sales data,依頼・申請,"9月21日付のメールを拝見しました。
+ご依頼の件、了解しました。早速明日から資料の作成に入ります。遅くても今週末にはそちらにお送りできるのではないかと思います。
+他に私がお手伝いできるようなことがあれば、気軽に声をかけてください。","I received your e-mail dated September 21.
+Regarding your request, no problem. I will start putting together the material from tomorrow. I think I will be able to send it to you by the end of this week at the latest.
+If there is anything else I can be of help with, please feel free to contact me.","以下は、スケジュール感を確認したいときに使えます。
+
+作業スケジュールはどうなりますか。
+How does the work schedule look?"
+19,1,許可を申請する,Request for permission to Reprint,依頼・申請,"私は東京グローバルフーズで社内報を担当しております田中太郎と申します。
+8月は高予定の社内報にご著書『飽食の光と影』第3章 - 1 の転載許可をいただけないでしょうか。サッシにはロバーツ様のお名前と著作名を記載し、1 部献本いたします。
+ご理解を賜り転載の許可をいただけましたら幸いです。","My name is Taro Tanaka and I am in charge of the in-house newsletter at Tokyo Global Foods.
+I would like to ask for your permission to reprint Chapter 3-1 of your book, “The Light and Dark Sides of Gluttony”, in the August edition of our in-house newsletter. We will include your name and the title of the work, and we will also send you a copy.
+We would be extremely grateful to have your understanding and permission to reprint this part of your work.","この定型文は、許可を得たい場合にメールする機会によく使います。別の申請許可の例文も参考までに載せておきます。ご参考まで。
+
+弊社のウェブサイトに御社のウェブサイトへのリンクを貼ることを許可いただきたく存じます。
+We would like your permission to post a kink to your website on our website."
+20,1,申請に応じる,RE: Request for permission to Reprint,依頼・申請,"私の著書『飽食の光と影』の文章を転載したいというご連絡をありがとうございます。
+一度限りの使用という条件で、メールに示していただいた箇所についての使用を許可いたします。
+御社の8月号の社内報を拝見するのを楽しみにしております。","Thank you for contacting me regarding your wish to reproduce part of my book “The Light and Dark Sides of Gluttony.”
+On the condition that it is to be used once only, I give you permission to use the part specified in your e-mail.
+I look forward to seeing the August edition of your in-house newsletter.","問い合わせが入ることもあると思うので、以下注記があっても良いかもしれません。
+
+お問い合わせなどはこのアドレスまでお願いいたします。
+If you have any inquiries, please contact us at this address."
+21,1,会議の開催を知らせる,Notification of meeting,会議・イベント,"企画開発部の皆さま
+12月11日の午前10時より午後12時半までA会議室で会議を行います。
+主な議題は「今後の企画戦略について」と「新規企画の提案」です。企画の提案についてはウィリアムによる発表を予定しています。
+出血を確認したいと思いますので前日の夕方までにお知らせください。","To the staff of the Project Planning and Development Dept.:
+We will hold a meeting in Meeting Room A from 10:00 a.m. to 12:30 p.m. on December 11.
+The meeting agenda includes “Planning strategies for the future” and “New project proposal.” William will be giving a presentation on the project proposal.
+Please let me know by the evening of the day before the meeting whether or not you will be able to attend.","メール分で説明が難しい場合は議題を事前に添付するのがベターです。出席すべきかの判断材料になります。
+
+今日の会議の議題は添付の資料のとおりです。
+The topics to be discussed at today’s meeting are listed in the attached document."
+22,1,会議に出席する,RE: Notification of meeting,会議・イベント,"次回会議の連絡をありがとう。
+お知らせいただいた日時で今日のところOKです。ウィリアムはいつも良いアイディアを思いつくので、彼がどんな提案をするか今から楽しみです。
+議題について変更してほしい所があれば後で連絡しますね。","Thank you for your message about the next meeting.
+At the moment the day and time you mentioned are fine with me. I am looking forward to what William is going to suggest as he always comes up with very good ideas.
+I will let you know if there is anything I’d like to be changes as regards the agenda.","以下が参考になるかもしれません。
+
+会議の前に予定が貼っているので途中からにはなりますが、出席したいと思っています。
+I already have an appointment before the meeting, so I may not be there when the meeting starts, but I will join you later."
+23,1,会議を欠席する,RE: Notification of meeting,会議・イベント,"メールをありがとう。
+その日は締め切り日と重なっているので、会議には出席できそうにありません。
+後で議事録を送ってもらえますか。","Thank you for your e-mail.
+I am sorry, but I have a deadline to meet on that day, and I won’t be able to attend the meeting.
+Could you send me the minutes later?","その他よく使う表現として、予定が入ってしまって出席できないという連絡。「仕方なく〜」はhave to 〜で表現できます。以下参考までに。
+
+急に予定が入ってしましました。ミーティングへの出席をキャンセルさせてください。
+Something urgent has come up. I’m afraid that I have to cancel my attendance at the meeting."
+24,1,予定変更を知らせる,Change in meeting time,会議・イベント,"皆さま
+12月11日野会議の時間が変更になりました。
+午前10時から午後12時半までの予定でしたが、午後1時から3時半までとなりました。
+改めて出欠についてご連絡します。","To all staff:
+The time of the meeting on December 11 has been changed.
+We have rescheduled the meeting for 1:00 p.m. - 3:30 p.m.. instead of 10:00 a.m. - 12:30 p.m.
+Please let me know once again as to whether or not you will be able to attend.","議題が変更になったときは、次が使えます。
+
+議題の一部が変更になりました。詳しくは添付の資料をご覧ください。
+Part of the agenda has been altered. Please see the attached materials for details."
+25,1,議事録を送る,Meeting minutes,会議・イベント,"皆さま
+先日の会議は活発な意見交換ができてとても有意義だったと思います。
+その時の議事録を作りましたので添付してお送りします。
+修正や追加すべき点がありましたら明日正午までにお知らせください。","Hi everyone:
+We had an active exchange of opinions at the meeting the other day and I believe it was beneficial for us all.
+I have put together the meeting minutes and have attached them to this e-mail.
+If there are any points to be revised or added, please let me know by noon tomorrow.","その他の表現。
+ご要望の資料を添付いたします。
+Please find attached the documents you requested."
+26,1,面会を打診する,Visit to your company,アポイントメント,"営業会議のため来週福岡に出張することになりました。
+滞在中、お合いして新しいセキュリティーシステムについてご説明する機会をいただけないでしょうか。
+15日から18日までの間でご都合はいかがでしょうか。返信をお待ちしています。","I am going to visit Fukuoka next month for a sales meeting.
+While I am there, would it be possible for us to meet and for me to explain the new security system to you?
+Could you fit me into your schedule sometime between 15th and the 18th? I look forward to your reply.","都合の良い日時を聞きたいときには以下。
+
+打ち合わせをするのに都合の良い日時をお知らせください。
+Please let me know a convenient date and time for us to have a meeting."
+27,1,面会に応じる,RE: Visit to your company,アポイントメント,"来週こちらにおいでになるとのご連絡をありがとうございました。
+こちらも新しいセキュリティーシステムについてぜひ説明を伺いたく存じます。16日の午後でしたら空いています。
+ご滞在中のホテルまで私が出向いても構いません。ご希望をお知らせください。","Thank you for contacting me regarding your visit here next month.
+I would very much like to listen to your explanation of the new security system. I will be free in the afternoon of the 16th.
+It would be no problem for me to come over to your hotel. Please let me know if you would like me to do so.","ご都合が悪いようでしたらお知らせください。
+If this isn’t convenient for you, please let me know."
+28,1,約束を確認する,RE: Visit to your company,アポイントメント,"これは来月16日の御社ご訪問に関す確認のメールです。
+当日は午後2時に私と木村の2名が御社にお伺いする予定です。
+説明を通じ、御社セキュリティーシステムの利点にご納得いただけますことを願っております。","This is to confirm that we will be visiting your company on the 16th of next month.
+Kimura and I plan to visit you at 2:00 p.m. on that day.
+We hope that our explanation of new security system will convince you of its merits.",少しフランクですが、結びに See you soon. も使えます。
+29,1,面会に対するお礼を述べる,RE: Visit to your company,アポイントメント,"昨日は面会のお時間を作っていただきありがとうございました。
+弊社新セキュリティシステムについてのご質問に十分お答えすることができたと思っております。
+訪問の際、御社の皆さまにお世話になりましたことを重ねてお礼申し上げます。","Thank you ver much for making time to see us yesterday.
+I believe we were able to satisfactorily answer all your questions regarding our new security system.
+I would like to express my deep appreciation to everyone at your company for the kindness we received during our visit.","以下も参考までに。
+
+同席された井上様、川本様にもよろしくお伝えください。
+Please pass on my regards to Mr. Inoue and Ms. Kawamoto who attended the meeting."
+30,1,手配を依頼する,Hotel reservation,出張,"今月末にモーターショウの視察でデトロイトに出張した後、そちらに寄ろうと計画しています。
+会社の近くのホテルに部屋を予約していただけませんか。28日からの2泊でお願いします。
+決まったらホテルの名前と予約番号を知らせてください。","I am planning to visit your office after my business trip to Detroit to see the motor show at the end of this month.
+Could you reserve a room at a hotel near your office for me? I would like to stay for two nights from the 28th.
+Once it’s confirmed, please let me know the name of the hotel and the reservation number.","車の手配依頼したいときは以下参考まで。
+
+ホテルからイベント会場までの車の手配を頼みます。
+I’d like you to arrange for a car to take us from the hotel to the event venue."
+31,1,手配完了を伝える,RE: Hotel reservation,出張,"頼まれていたホテルの予約がとれました。
+イーストリバーホテルに28日から2泊です。部屋からの眺めがとてもよいところです。
+空港まで迎えに行くので、到着したら連絡をください。
+ではまた。","I’ve made the reservation you asked for.
+It’s for two nights from 28th, at East River Hotel. The view from the room is quite special.
+I will come to meet you at the airport, so please give me a call when you touch down.
+See you then.","別の表現なら以下を参考までに。
+
+ホテルの手配が完了しましたのでお知らせいたします。
+This is to let you know that the hotel arrangements have been made."
+32,1,手配内容を取り消す,Change in business trip schedule,出張,"営業全体会議が入ってしまい、デロイトを予定より1日早く発たなければならなくなりました。
+29日の宿泊予約をキャンセルしていただきたいのですが。
+ご面倒をおかけしてすみませんが、よろしくお願いします。","As I have to attend a general sales meeting, I’ll have to leave Detroit one day earlier than I planned.
+Would you mind canceling my hotel reservation for the 29th?
+I’m sorry for the trouble, but I really appreciate you doing this for me.","出張が取り消しになってしまった場合は以下。
+
+残念ながら出張予定が取り消しになってしまいました。
+I am afraid the business trip has been canceled."
+33,1,手配に対するお礼を述べる,About my visit on the 28th,出張,"この度はいろいろと手配をしていただいて、本当にありがとうございます。
+28日の朝早くに着くので、ホテルのチェックインには十分間に合うと思います。
+お言葉に甘えて、空港に着いたら連絡します。ではその時にまた。","Thank you so much for arranging everything.
+I will arrive early in the morning on the 28th, so I will be in plenty of time to check-in at the hotel.
+Thanks for your order. I will call you when I arrive at the airport. Until then.","電話番号を知らせる場合はいかが参考になると思います。just in case : 念のため はよく使います。
+
+念のため私の携帯電話の番号をお知らせしておきます。
+I’m letting you know my cell phone number just in case."
+34,1,納期に関するクレーム,Order number 2468,クレーム,"注文番号 2468 の品物が 9月12日 現在まだ到着しておりませんので、取り急ぎお知らせいたします。
+得意先への納期まで間がないので大変困っています。
+出荷の状況を至急お知らせください。","This is a quick note to let you know that as of September 12 Order No. 2468 has not yet arrived.
+This poses a serious problem as there is not much time before we are due to make a delivery to a customer.
+Can you contact us immediately regarding the shipment status?","早急な対応を促したいときは、以下が参考になると思います。
+
+遅延の原因を調査し、その結果をできるだけ早くお伝えください。
+We ask that you investigate the reasons for the delay and inform us of the result as soon as possible.
+どんなに遅くても来週までに納品するようにしてください。
+Please be sure to complete the delivery by the end of next week at the latest."
+35,1,納期に関するクレームへの返信,RE: Order number 2468,クレーム,"ご注文の品の納期の遅れについてご連絡いただき感謝いたします。
+早速調査いたしましたところ、税関を通過するのに少し時間がかかっていたことがわかりました。明日の6時までには御社にお納めできると思います。
+納品が遅れまして誠に申し訳ございませんでした。","Thank you for contacting us in regard to the delay in your receiving the items you ordered.
+I looked into the mater immediately and found that it has taken some time for your items to pass through customs. I think you should receive them by 6:00 p.m. tomorrow.
+We sincerely apologize for the delay in delivery.","別のお詫び文です。
+
+納品が遅れまして申し訳ございません。商品到着までもうしばらくお待ち下さい。
+We are sorry for the delay. Please wait for a little while longer for your items to be delivered."
+36,1,請求に関するクレーム,Invoice number 030877,クレーム,"本日請求書 (請求書番号 030877) を受け取りました。
+請求内容を確認しましたところ、8月24日分の価格が見積もり価格と異なっているようです。請求書では 58,000 ドルとなっていますが、 48,000 ドルの間違いではないでしょうか。
+訂正の上、請求書を再送していただきますようお願いします。","We received your invoice (invoice number 030877) today.
+We have checked the details of the invoice, and the price for August 24 appears to be different from the price quoted. The price given in the invoice is $58,000, but shouldn’t this be $48,000?
+Could you please revise and resend the invoice?",クレームする際は、できるだけ丁寧な文章を心がけたほう良いと個人的には考えます。そんため、例えば could を表現として用いています。
+37,1,請求に関するクレームへの返信,RE: Invoice number 030877,クレーム,"請求書の誤りに関してご指摘をいただきありがとうございました。
+お送りした請求書の金額が間違っておりました。すぐに内容を訂正し、ただし請求書をお送りいたします。
+当方のミスによりご迷惑をおかけしましたことを心よりお詫び申し上げます。","Thank you for drawing our attention to the error in the content of the invoice.
+The amount given in the invoice we sent was incorrect. We will adjust the details and send you the correct invoice immediately.
+Please accept our deepest apologies for causing you undue inconvenience as a result of our mistake.","他の表現を参考までに。
+
+この回答でご満足いただけますよう願っております。
+We trust that you will be satisfied with this response."
+38,1,募集のお知らせ,Calling for promotion campaign ideas!,案内・通知,"皆さま
+恒例の「春の新生活応援キャンペーン」の企画案を今年も応募します。
+毎年、新生活へのスタートを切る3月と4月に合わせたキャンペーン中は売り上げを伸ばしてきました。今回も、前向きで明るいイメージの企画案を期待しています。
+皆さん、奮ってご応募ください。","Everyone:
+As usual, this year we are again calling for promotion ideas for the “Spring New Start Campaign”.
+Our sales have gone up every year during the campaign period in March and April, a time when people embark on new lifestyles. This time around too, we look forward to ideas that have a forward-looking and cheerful image.
+Everyone, please send in your ideas.","問い合わせ先を伝える場合は以下。
+
+詳細については、プロジェクト開発部の坂田までお問い合わせください。
+For further details, contact Ms. Sakata in the Project Development Department."
+39,1,組織改編などのお知らせ,Notification of company recognization,案内・通知,"社員各位
+事業の複雑化に伴い、4月1日より社内組織の一部改編を実施する事となりました。
+「営業部」が「営業管理部」「営業企画部」「海外営業部」に分かれ、所属の社員もそれぞれこの3つの新しい部署に分かれます。
+これにより、市場ニーズにきめ細かく対応した営業活動を行うことが期待されます。この変更について皆さまの周知徹底をお願いいたします。","To all members of staff:
+In view of the increasing complexity of our operations, a partial reorganization of the company will be implemented from April 1.
+The “Sales Division” will be divided into the “Sales Management Division”, the “Sales Planning Division”, the “Overseas Sales Division”, and the staff of the “Sales Division” will be divided between these three new divisions.
+It is expected that this will result in sales activities being more responsive to the needs of the market. We ask you to ensure that everyone is informed of this change.",本テンプレでは、組織改編の連絡だけでなく、これから社員はどう対応すべきかについて明記してあります。
+40,1,探し物などのお知らせ,Searching for a catalog,案内・通知,"マーキュリーZ社の製品カタログを探しています。
+急いで注文しなければならない商品があり、カタログで確認したいのですが、どこにも見当たらないのです。
+どなたかお持ちではないでしょうか。または、置いてある場所をご存じの方がいらっしゃいましたらご連絡ください。","I am searching for the Mercury Z product catalog.
+I want to check the catalog for a product that has to be ordered quickly, but I cannot find the catalog anywhere.
+Does anybody have the catalog? If anybody knows where it is, please contact me.","拾い物をした場合のテンプレは以下を参考にしてください。
+
+お茶コーナーの入口付近で USB メモリースティックを拾いました。
+I picked up a USB memory stick near the entrance to the tea corner."
+41,1,実施のお知らせ,E-mail server maintenance,案内・通知,"皆さま
+12月6日(土)の午後1時から5時までの予定でメールサーバーのメンテナンス作業が行われます。
+メンテナンス中はメールが使用できなくなります。
+土曜日ですが、出社される方がいらっしゃいましたらご注意ください。また、必要に応じて取引先にもその旨伝えておくようにしてください。","To everybody:
+Maintenance work on the e-mail server is scheduled for December 6, Saturday, from 1:00 p.m. to 5:00 p.m.
+E-mail will not be available while the maintenance is being carried out.
+It is a Saturday, but anyone who will be in the office should be aware of this fact. Also, you might want to pass this information on to clients if necessary.","工事などによる騒音の可能性をお知らせする場合の定型文。
+
+工事に伴う騒音などでご迷惑をおかけするかもしれませんがご理解ください。
+Please understand that the construction work might create some noise or other disturbance that you may find inconvenient."
+42,1,連絡先変更などのお知らせ,Change in e-mail address,案内・通知,"プロバイダーを変えたので、メールアドレスが変更になりました。
+新しいメールアドレスは mori@bbzz.co.jp です。これからはこちらを使ってください。","I have changed providers and so my e-mail address has changed.
+The new e-mail address is mori@bbzz.co.jp. Please use this address from here on.","以下テンプレも参考までに記載します。
+
+12月1日以降はこのメールアドレスにメールをお送りいただくことができなくなります。
+It will no longer be possible to send e-mails to this address from December 1.
+
+ご面倒をおかけしますが、ご理解の程よろしくお願いいたします。
+I am sorry for the inconvenience, and I ask for your understanding."
+43,1,休業日のお知らせ,Notification of summer vacation period,案内・通知,"お客さま各位
+弊社は8月12日から18日までの夏季休暇に伴い、この間を休業とさせていただきます。
+休業中の緊急のお問い合わせは、本社代表アドレス宛にご連絡ください。
+ご不便をおかけしますが、どうぞよろしくお願いいたします。","We will suspend operations during the summer vacation period from August 12-18.
+Should you have any urgent inquiries during the break, please contact us using the head office e-mail address.
+We are sorry for the inconvenience. Thank you for your cooperation.","その他の表現(理解を求める場面)。
+
+ご理解、ご協力のほどよろしくお願い申し上げます。
+We would like to ask for your understanding and cooperation."
+44,1,不在のお知らせ,Notification of business trip,案内・通知,"今月の20日から23日までは出張のため会社におりません。
+出張中は all-staff@unwase.co.jp までメールをお送りくださいますようお願いします。
+ご迷惑をおかけして申し訳ありませんが、出張から戻ったらまたお話させてください。ではまた。","I won’t be in the office from the 20th of this month to the 23rd as I will be in business trip.
+Please send email to all-staff@unwase.co.jp while I am away.
+I apologies for any inconvenience this may cause you. I would like for us to talk when I return from my trip.","その他、不在時の対応例を参考までにのせておきます。
+
+緊急の場合は、メールではなく携帯電話にご連絡ください。
+In an emergency, please call my cell phone rather than using e-mail.
+
+休暇中の緊急のお問い合わせは、tanaka@sott.com までご連絡ください。
+For emergency inquiries while I am away, please contact me at tanaka@sott.com."
+45,1,会社へのアクセスのお知らせ,Directions to our company,案内・通知,"来週初めてご来社いただく際のご参考に、弊社までのアクセス方法をご案内いたします。
+地下鉄西南線大阪御苑前駅西口を出て、中央通りの御苑1丁目の交差点を横断すると目の前にあります。
+当日お目にかかるのを楽しみにしております。","I would like to give you directions on how to get to our company when you visit us next week as it will be your first visit.
+Come out of the west exit of Osaka-Gyoen-Mae Station on the Seinan Subway Line, cross the intersection at Gyoen 1-chome on Chuo Street, and you will see our office in front of you.
+I look forward to seeing you on the day.","結びの例文を参考までに。
+
+ご不明な店があれば何なりとお尋ねください。
+Please feel free to ask if there is anything about which you are uncertain."
+46,1,接待・贈答品などのお礼,Thank you for everything,社外の挨拶,"そちらに出張中は大変お世話になり、ありがとうございました。
+仕事だけでなく、あちこち案内していただきとても楽しく過ごせました。特に最後の晩に皆さんと一緒に食べて飲んでおしゃべりしたことが1番の思い出です。
+また近いうちにお会いできるといいですね。皆さんによろしくお伝えください。","Thank you so much for the wonderful hospitality I enjoyed during my business trip.
+And not just in relation to work; I also had a wonderful time being shown around various places. In particular, the most memorable time was when I had dinner, some drinks and a nice chat with everyone on my last night.
+I hope to see you in the near future. Please give my regards to everyone.","その他の表現を参考までに。
+
+ご厚意に感謝いたします。今後ともご支援をよろしくお願い申し上げます。
+We thank you for your kindness. Your continued support will be greatly appreciated."
+47,1,訃報,Condolences,社外の挨拶,"大変悲しいお知らせがあります。弊社ロサンゼルス支店長のエミリー・シュミットが交通事故のため4月18日に急逝しました。
+ご家族から、お花は受け取らないとの申し出がありました。その代わりに、故人を偲んで線とメアリー協会宛に寄付を送ることはできます。
+謹んで彼女の冥福をお祈りしたいと思います。","I have some extremely sad news. Emily Schmidt, Head of our Los Angeles Branch, passed away suddenly on April 18 as a result of a traffic accident.
+The family asked for no flowers. Instead, we may send a donation to St. Mary’s Church in her memory.
+We pray that her soul may rest in peace.",あまり扱わないテーマですが、お悔やみの連絡は送るようにしています。普段使わない単語が出てくるので、テンプレ化しておくと便利です。
+48,1,お見舞い・励ましなど,How are you feeling?,社外の挨拶,"御社の田中さんから、あなたが病気で入院されていると伺いました。
+長い間休む日まもなくプロジェクトに没頭されてきたので、疲れが出たのかもしれませんね。
+十分に休養してください。回復されて、また一緒にお仕事ができる日を楽しみにしています。","I heard from Mr. Tanaka at your company that you are sick and in hospital.
+I imagine you are fatigued after being so absorbed in the project for so long with no time off.
+Be sure to make a full recovery. I look forward to the day we can work together again once you have recoverd.","他の表現も、参考まで。
+
+一日も早いご回復をお祈りしております。
+I wish for your speedy recovery."
+49,1,退職・転勤のお知らせ,Notification of transfer,社外の挨拶,"4月1日付で、大阪支店から東京本社へ転勤することになりました。
+不慣れな土地で不安はありますが、今までの経験を生かし良いスタートを切ろうと思っています。
+これまで大変お世話になりありがとうございました。機会がありましたらぜひまたご逸shにお仕事をさせてください。
+重ねてお礼申し上げます。","On April 1, I will transfer from the Osaka Branch to the Tokyo Head Office.
+I am a bit uneasy as it’s a new area for me, but I’m hoping to make a good start by making use of the experience I have gained so far.
+Thank you for all your help and support. I would definitely like to work with you again should the opportunity arise.
+Thank you again.","その他、下の表現も参考になれば幸いです。
+
+今度の会社では、以前から興味のあったゲームソフトの開発に携わります。
+At the new company, I will be working on game software development, something that I have been interested in for some time."
+50,1,退職・移動などのあいさつへの返信,RE: Notification of transfer,"11社外の挨拶
+","東京本社へ転勤なさるとのお知らせを拝見しました。
+さびしいですが、本社に行けばきっと活躍の場は今よりずっと広がることでしょう。
+こちらこそいろいろとお世話になりました。本社でのご活躍をお祈りしております。","I read your e-mail announcing your relocation to the Tokyo Head Office.
+Although I will miss you, going to the head office will give you more opportunities to take more of an active role.
+I really appreciate everything you have done for me. I wish you success at the head office.","他にも以下のテンプレが使えるかもしれません。ご参考まで。
+
+健康に留意され、第二の人生でも大いにご活躍されることを願っております。
+I hope you will take cate of yourself and will be blessed with prosperity in your new start."
+51,1,結婚・出産などのお祝い,Congratulation on getting married!,社外の挨拶,"ご結婚なさったそうですね。おめでとう！
+お相手が私のよく知っているキムだと知り驚きました。嬉しくてすぐにソウルまでお祝いに駆けつけたいくらいです。
+お二人の末永いお幸せを心からお祈りしています。
+もう一度、おめでとう。","I heard you got married. Congratulations!
+I was surprised to learn your partner is Kim, who I also know really well. I am s glad that I feel like I want to rush over to Soul to celebrate with both of you.
+I hope that you two will be happy together for a long, long time.
+Once again, congratulations.","赤ちゃんが生まれたときのお祝いには以下が使えます。
+
+女の赤ちゃんが誕生されたとのこと、おめでとうございます。
+Congratulations on the birth of your baby girl."
+52,1,季節のあいさつ,Have a fun holiday!,社外の挨拶,"ホリデーシーズンのご挨拶を申し上げます。
+仕事に家庭にと忙しい日々を過ごしているうち、気づいたらもう今年も終わりに近づいていました。
+どうか楽しいお休みと実り多き新年を迎えられますように。","Holiday greetings.
+Being so busy both at work and at home, I have only just noticed that we are almost at the end of the year.
+I hope that you will have a good holiday and fruitful new year.","結びのフレーズにはその他にも以下のようなものがあります。ご参考まで。
+
+来年が皆さまにとって良い年となりますよう願っております。
+I hope that next year will be a great year for you all.
+
+どうぞ良いサマー・ホリデーをお過ごしください。
+Have a good summer holiday.
+
+ご家族と共に素晴らしいクリスマスをお迎えください。
+Have a wonderful Christmas together with your family."
+53,1,売り込み,Online company database service,その他,"お客さま各位
+神戸ビジネスリサーチは、皆さまのお役に立つ国内外300万社以上の企業の最新情報をオンラインでいち早くご提供しています。
+当社にはお客さまのニーズに応え、成功をサポートしてきた30年以上にわたる実績があります。御社にも必ずご満足いただけることと確信しております。
+当社サービスにご関心をお持ちいただければ幸いです。ご連絡お待ちしております。","To our customers:
+Kobe Business Research provides you instantaneously with up-to-date useful information online on over 3 million corporations in Japan and abroad.
+We have a track record of over 30 years in meeting customer needs and providing support for their success. We are confident that you will be satisfied with our services.
+We hope you will be interested in our services. We look forward to hearing from you.","ご希望があれば喜んでオンラインにて商品説明いいたします。ぜひご検討ください。
+We would be more than happy to explain the products online if you wish. Do give this some consideration, by all means.
+
+弊社ウェブサイト内の新商品紹介コーナーもぜひご覧ください。
+Please feel free to have a look at the new product page on our website."
+54,1,売り込みへの返信,RE: Online company database service,その他,"御社のサービス案内を大変興味深く拝見いたしました。
+サービス内容や利用方法についてさらに詳しくお話をお聞きしたいと思っています。近々一度お会いすることはできますか。
+折り返しご連絡をお願いいたします。","I read through the details of your services with great interest.
+I would like to hear more about the details of the services and how to use them. Would it e possible to meet with some time soon?
+I look forward to your reply.","断る場合は以下の文が参考になるかもしれません。
+
+残念ですが、ご案内いただいたサービスを利用する予定はありません。今回はお取引ができず残念ですが、またの機会を期待しております。
+Unfortunately, we are not planning to use the service you proposed. We are unable to do business with you on this occasion, but we look forward to doing so in the future."
+55,1,進捗状況の確認,Three-way collaboration project,その他,"部長会議が今週金曜日にあるので、プロジェクトの進捗状況について報告してください。
+作業はスケジュール通りに進んでいますか。何か問題があったら早めに解決策を考えるようにしてください。
+水曜日中に報告してもらえますか。","There is a department head meeting on Friday this week, so please provide a report on the state of progress situation of the project.
+Is the project proceeding according to schedule? If there are any problems, please think of some solutions quickly.
+Can you provide me with the report by the end of Wednesday?","その他使えそうな文を記しておきます。参考までに。
+
+お願いしている作業の状況はいかがでしょうか。
+How is the work I asked you to do coming along?
+
+今後の作業の進行を検討するため、途中経過を確認させたください。
+I would like to confirm progress midway in order to consider the direction of the work from here on.
+
+その作業は来週の金曜日までに仕上げてほしいのですが、大丈夫でしょうか。
+I would like you to finish up that job by Friday of next week. Would that be okay?"
+56,1,進捗状況の報告,RE: Three-way collaboration project,その他,"了解しました。報告書は水曜日中には報告します。
+作業については若干改善が必要な点もありますが、全体的には順調に進んでいます。
+詳しくは報告書でお知らせします。","I understand. I will submit the report by the end of Wednesday.
+There are some points with respect to the work that require a slight improvement, but overall things are proceeding smoothly.
+I will notify you of the details in the report.","参考になりそうな表現を書いておきます。
+
+スケジュールよりもやや遅れ気味なので、改善策について話し合う必要があります。
+As we are slightly behind schedule, we need to discuss measures for improvement.
+
+遅くとも今週中までには報告書を提出するようにいたします。
+I will submit the report by the end of this week at the very latest."
+57,1,返事の催促,Reminder : Request for sales data ,その他,"3月18日付のメールで売上データをお贈りいただくようお願いしたのですが、まだ届いていません。
+私からのメールをお読みいただいていないのではないかと心配しています。
+水曜日の会議に使うので、できるだけ早くいただきたいと思います。お返事お待ちしています。
+ご協力よろしくお願いします。","I send you an e-mail on March 18 asking you to send me the sales data;
+however, I haven’t received any reply yet.
+I am worried that perhaps you have not read the e-mail I sent.
+I would like to send me the data as soon as possible as I will need to use it at the Wednesday meeting. I will be waiting for your reply.
+I appreciate your help with this.",件名にリマインダーと入れて連絡すると、相手もすぐ対応してくれることが多いです。件名に、直接的にメール読んだ？みたいな書き方をすると嫌な気持ちになる人もいるので、そういった書き方はNGです。

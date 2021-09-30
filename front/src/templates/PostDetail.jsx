@@ -4,8 +4,8 @@ import { makeStyles } from '@material-ui/styles';
 import { Divider } from '@material-ui/core';
 import { PrimaryButton } from 'components/UIkit/index';
 import { createComment, deletePost } from 'reducks/posts/operations';
-import { fetchPosts } from 'reducks/posts/operations';
 import { fetchLikes } from 'reducks/likes/operations';
+import { fetchPosts } from 'reducks/posts/operations';
 import { TextInput } from 'components/UIkit/index';
 import { CommentDetail } from 'components/Posts/index';
 import { PostCardDetail } from 'components/Posts/index';
@@ -33,14 +33,8 @@ const PostDetail = () => {
     const selector = useSelector((state) => state);
     const user = getUser(selector);
     const id = selector.router.location.pathname.split('/posts/detail/')[1];
-    const [posts, setPosts] = useState(null)
-    const postsAll = getPosts(selector)
+    const posts = getPosts(selector);
     const post = posts.find((element) => element.id === Number(id))
-
-    useEffect(() => {
-        dispatch(fetchPosts())
-        setPosts(postsAll)
-    },[]);
 
     const [comment, setComment] = useState(""),
           [comments, setComments] = useState([]);

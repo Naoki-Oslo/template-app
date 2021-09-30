@@ -2,7 +2,7 @@ import React from 'react';
 import { push } from 'connected-react-router';
 import { useSelector, useDispatch } from "react-redux";
 import { makeStyles } from '@material-ui/core';
-import { SmallButton } from "components/UIkit";
+import { ExtraSmallButton } from "components/UIkit";
 import { getUser } from "reducks/currentUser/selectors";
 import { NavTabs } from 'components/Users/index';
 import no_profile from 'assets/img/src/no_profile.png';
@@ -37,7 +37,7 @@ const UserMyPage = () => {
                 </div>
             </section>
             <div className="center">
-                <SmallButton
+                <ExtraSmallButton
                     label={"編集"}
                     onClick={() => dispatch(push('/users/edit/' + String(user.uid)))}
                 />
