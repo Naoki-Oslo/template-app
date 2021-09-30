@@ -1,5 +1,5 @@
-import {initialState} from 'reducks/store/initialState';
-import * as Actions from './actions';
+import { initialState } from 'reducks/store/initialState'
+import * as Actions from './actions'
 
 export const NotificationReducer = (state = initialState.notification, action) => {
   switch (action.type) {

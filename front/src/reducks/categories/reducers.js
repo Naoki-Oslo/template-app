@@ -1,14 +1,14 @@
-import * as Actions from './actions';
-import { initialState } from 'reducks/store/initialState';
+import * as Actions from './actions'
+import { initialState } from 'reducks/store/initialState'
 
-export const CategoriesReducer = (state = initialState.categories, action)  => {
-    switch (action.type) {
-        case Actions.FETCH_CATEGORIES:
-            return {
-                ...state,
-                list: action.payload
-            };
-        default:
-            return state
-    }
-};
+export const CategoriesReducer = (state = initialState.categories, action) => {
+  switch (action.type) {
+    case Actions.FETCH_CATEGORIES:
+      return {
+        ...state,
+        list: action.payload,
+      }
+    default:
+      return state
+  }
+}

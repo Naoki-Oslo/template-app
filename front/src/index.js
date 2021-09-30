@@ -1,17 +1,17 @@
-import React from 'react';
+import React from 'react'
 import { render } from 'react-dom'
-import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'connected-react-router';
-import * as History from 'history';
-import * as serviceWorker from 'serviceWorker';
-import { MuiThemeProvider } from '@material-ui/core/styles';
-import { theme } from 'assets/theme';
-import { ScrollToTop } from 'components/UIkit/index';
-import createStore from 'reducks/store/store';
-import App from './App';
+import { Provider } from 'react-redux'
+import { ConnectedRouter } from 'connected-react-router'
+import * as History from 'history'
+import * as serviceWorker from 'serviceWorker'
+import { MuiThemeProvider } from '@material-ui/core/styles'
+import { theme } from 'assets/theme'
+import { ScrollToTop } from 'components/UIkit/index'
+import createStore from 'reducks/store/store'
+import App from './App'
 
-const history = History.createBrowserHistory();
-export const store = createStore(history);
+const history = History.createBrowserHistory()
+export const store = createStore(history)
 
 console.log(store.getState())
 
@@ -25,7 +25,6 @@ render(
     </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
-);
+)
 
-serviceWorker.register();
-
+serviceWorker.register()

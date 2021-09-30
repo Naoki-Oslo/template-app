@@ -1,47 +1,47 @@
-export const initialState = {  
-    loading: {
-        state: false,
-        text: '',
-    },
-    
-    notification: {
-        isOpen: false,
-        variant: 'success',
-        message: '',
-    },
+export const initialState = {
+  loading: {
+    state: false,
+    text: '',
+  },
 
-    currentUser: {
-        isSignedIn: false,
-        role: "",
-        uid: "",
-        name: "",
-        occupation: "",
-        organization: "",
-        profile: "",
-        image: "",
-    },
+  notification: {
+    isOpen: false,
+    variant: 'success',
+    message: '',
+  },
 
-    posts: {
-        list: []
-    },
+  currentUser: {
+    isSignedIn: false,
+    role: '',
+    uid: '',
+    name: '',
+    occupation: '',
+    organization: '',
+    profile: '',
+    image: '',
+  },
 
-    memos: {
-        list: []
-    },
+  posts: {
+    list: [],
+  },
 
-    categories: {
-        list: []
-    },
+  memos: {
+    list: [],
+  },
 
-    likes: {
-        list: []
-    },
+  categories: {
+    list: [],
+  },
 
-    favorites: {
-        list: []
-    },
+  likes: {
+    list: [],
+  },
 
-    users: {
-        list: []
-    }
-};
+  favorites: {
+    list: [],
+  },
+
+  users: {
+    list: [],
+  },
+}
