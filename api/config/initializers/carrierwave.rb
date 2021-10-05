@@ -3,7 +3,7 @@ require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
-  config.asset_host = 'http://localhost:8000'
+  config.asset_host = 'http://localhost:3000'
   config.storage = :file
   config.cache_storage = :file
 end

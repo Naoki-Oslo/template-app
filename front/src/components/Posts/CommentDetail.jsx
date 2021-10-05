@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUsers } from 'reducks/users/selectors';
-import { makeStyles } from '@material-ui/core/Styles';
+import { makeStyles } from '@material-ui/core/styles';
 import noProfile from 'assets/img/src/no_profile.png';
 import { push } from 'connected-react-router';
 import { fetchUsers } from 'reducks/users/operations';

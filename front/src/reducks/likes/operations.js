@@ -1,8 +1,7 @@
 import axios from 'axios'
 import { fetchLikesAction, createLikesAction, deleteLikesAction } from './actions'
 
-require('dotenv').config()
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = 'REACT_APP_BASE_URL'
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = process.env.REACT_APP_BASE_URL
 
 // categories全体を取得する
 export const fetchLikes = () => {

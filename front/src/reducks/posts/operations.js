@@ -5,8 +5,7 @@ import { hideLoadingAction, showLoadingAction } from 'reducks/loading/actions'
 import { setNotificationAction } from 'reducks/notification/actions'
 import { fetchPostsAction, deletePostAction, createPostsAction, updatePostsAction } from './actions'
 
-require('dotenv').config()
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = 'REACT_APP_BASE_URL'
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = process.env.REACT_APP_BASE_URL
 
 let notificationContent = {}
 

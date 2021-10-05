@@ -9,8 +9,8 @@ import { initialFetchPosts } from 'reducks/posts/operations'
 import { initialFetchCategories } from 'reducks/categories/operations'
 import { initialFetchLikes } from 'reducks/likes/operations'
 
-require('dotenv').config()
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = 'REACT_APP_BASE_URL'
+
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = process.env.REACT_APP_BASE_URL
 
 let notificationContent = {}
 
