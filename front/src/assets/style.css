@@ -73,6 +73,11 @@
     text-align: left;
 }
 
+.right {
+    margin: 0 auto;
+    text-align: right;
+}
+
 .p-grid__column {
     align-items: center;
     display: flex;

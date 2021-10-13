@@ -17,16 +17,25 @@ const useStyles = makeStyles((theme) => ({
             width: '75%',
             maxWidth: '575px',
         },
+    },
+    postTime: {
+        textAlign: 'right',
+        fontSize: 12,
     }
 }))
 
-
 const PostCardDetail = (props) => {
     const classes = useStyles();
+    const postTime = props.updated_at.split('T')[0];
 
     return (
+        <div>
             <div className="p-grid__column">
                 <div className={classes.detail}>
+                    <div className={classes.postTime}>
+                     投稿日 : {postTime}
+                    </div>
+                    <div className="module-spacer--extra-small"/>
                     <TextDetail label={"title"} value={props.title}/>
                     <TextDetail label={"category"} value={props.category}/>
                     <TextDetail label={"subject"} value={props.subject}/>
@@ -35,7 +44,10 @@ const PostCardDetail = (props) => {
                     <TextDetail label={"tips"} value={props.tips}/>
                 </div>
             </div>
+        </div>
         )
 };
+
+
 
 export default PostCardDetail;

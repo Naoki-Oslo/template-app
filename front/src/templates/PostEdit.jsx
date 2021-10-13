@@ -5,8 +5,17 @@ import { updatePost } from "reducks/posts/operations";
 import { getCategories } from 'reducks/categories/selectors';
 import { getPosts } from 'reducks/posts/selectors';
 import { getUserId } from 'reducks/currentUser/selectors';
+import { makeStyles } from '@material-ui/styles';
+
+const useStyles = makeStyles({
+    postTime: {
+        textAlign: 'right',
+        fontSize: 12,
+    }
+});
 
 const PostEdit = () => {
+    const classes = useStyles();
     const dispatch = useDispatch();
     const id = window.location.pathname.split('/posts/edit/')[1];
     const selector = useSelector((state) => state);
@@ -14,6 +23,7 @@ const PostEdit = () => {
     const posts = getPosts(selector);
     const uid = getUserId(selector);
     const post = posts.find((element) => element.id === Number(id))
+    const postTime = post.updated_at.split('T')[0];
 
     const [title, setTitle] = useState(""),
           [subject, setSubject] = useState(""),
@@ -58,9 +68,12 @@ const PostEdit = () => {
 
 
     return (
-        <section>
+        <>
             <h2 className="u-text__headline u-text-center">テンプレートの編集・更新</h2>
             <div className="c-section-container">
+                <div className={classes.postTime}>
+                     投稿日 : {postTime}
+                </div>
                 <TextInput
                     fullWidth={true} label={"タイトル"} multiline={false} required={true}
                     onChange={inputTitle} rows={1} value={title} type={"text"}
@@ -74,15 +87,15 @@ const PostEdit = () => {
                 />
                 <TextInput
                     fullWidth={true} label={"English(英訳)"} multiline={true} required={true}
-                    onChange={inputContentEnglish} rows={5} value={contentEnglish} type={"text"}
+                    onChange={inputContentEnglish} rows={8} value={contentEnglish} type={"text"}
                 />
                 <TextInput
                     fullWidth={true} label={"Japanese(和訳)"} multiline={true} required={true}
-                    onChange={inputContentJapanese} rows={5} value={contentJapanese} type={"text"}
+                    onChange={inputContentJapanese} rows={8} value={contentJapanese} type={"text"}
                 />
                 <TextInput
                     fullWidth={true} label={"説明/補足"} multiline={true} required={false}
-                    onChange={inputTips} rows={5} value={tips} type={"text"}
+                    onChange={inputTips} rows={8} value={tips} type={"text"}
                 />
                 <div className="module-spacer--small"/>
                 <div className="center">
@@ -92,7 +105,7 @@ const PostEdit = () => {
                     />
                 </div>
             </div>
-        </section>
+        </>
     );
 };
 

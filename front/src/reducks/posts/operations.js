@@ -61,7 +61,7 @@ export const fetchPosts = (category) => {
       })
       .then((response) => {
         const data = response.data.data
-        let posts = category === '' ? data : data.filter((element) => element.category === category.name)
+        let posts = (category === "") ? data : data.filter((element) => element.category === category.name)
         dispatch(fetchPostsAction(posts))
       })
       .catch((error) => {

@@ -21,7 +21,7 @@ services:
     build:
       context: ./api/
       dockerfile: Dockerfile
-    command: /bin/sh -c "rm -f /myapp/tmp/pids/server.pid && bundle install --path=vendor/bundle && bundle exec rails server -b 0.0.0.0
+    command: /bin/sh -c "rm -f /myapp/tmp/pids/server.pid && bundle install --path=vendor/bundle && bundle exec rails server -b 0.0.0.0"
     stdin_open: true
     tty: true
     environment:

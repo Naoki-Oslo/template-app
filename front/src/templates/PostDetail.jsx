@@ -24,7 +24,12 @@ const useStyles = makeStyles({
     icon: {
             height: 48,
             width: 48
-    }
+    },
+    row: {
+            display: 'flex',
+            justifyContent: 'space-around',
+            verticalAlign: 'top',
+    },
 });
 
 const PostDetail = () => {
@@ -74,26 +79,27 @@ const PostDetail = () => {
 
     return (
         <>
-        <section className="c-section-wrapin">
+        <section className="c-section-wrapin" >
             <PostCardDetail 
                 id={post.id} key={post.id} title={post.title} category={post.category} subject={post.subject} 
                 contentEnglish={post.content_en} contentJapanese={post.content_ja}
-                tips={post.tips}
+                tips={post.tips} updated_at={post.updated_at}
             />
-        <div className="left">
-            <SmallButton
-                label={"編集"}
-                onClick={() => dispatch(push('/posts/edit/' + id))}
-            />
+            <div className="module-spacer--extra-small"/>
             {(post.user_id === user.uid) && (
-                <SmallButton
-                    label={"削除"}
-                    onClick={() => dispatch(deletePost(id))}
-                />
+                <div className={classes.row}>
+                    <SmallButton
+                        label={"編集"}
+                        onClick={() => dispatch(push('/posts/edit/' + id))}
+                    />
+                    <SmallButton
+                        label={"削除"}
+                        onClick={() => dispatch(deletePost(id))}
+                    />
+                    <Like user_id={user.uid} post_id={post.id}/>
+                </div>
             )}
-            <Like user_id={user.uid} post_id={post.id}/>
-        </div>
-        <div className="module-spacer--extra-small"/>
+            <div className="module-spacer--extra-small"/>
         </section>
             <Divider />
             <div className="center">

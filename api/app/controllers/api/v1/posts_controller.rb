@@ -16,9 +16,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def index
-    posts = Post.all.where(params[:category])
-    comments = Comment.all.includes(:user).order(created_at: :desc)
-    likes = Like.all
+    posts = Post.all
     render json: { status: 'SUCCESS', message: 'Loaded the posts', data: posts }
   end
 

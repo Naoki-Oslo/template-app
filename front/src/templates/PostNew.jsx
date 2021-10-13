@@ -9,7 +9,7 @@ import { getUserId } from 'reducks/currentUser/selectors';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
-    row: {
+    button_row: {
         display: 'flex',
         justifyContent: 'space-around',
     },
@@ -56,7 +56,7 @@ const PostNew = () => {
     },[])
 
     return (
-        <section>
+        <div>
             <div className="c-section-container">
                 <h2 className="u-text__headline u-text-center">テンプレートの作成</h2>
                 <TextInput
@@ -72,18 +72,18 @@ const PostNew = () => {
                 />
                 <TextInput
                     fullWidth={true} label={"English(英訳)"} multiline={true} required={true}
-                    onChange={inputContentEnglish} rows={5} value={contentEnglish} type={"text"}
+                    onChange={inputContentEnglish} rows={8} value={contentEnglish} type={"text"}
                 />
                 <TextInput
                     fullWidth={true} label={"Japanese(和訳)"} multiline={true} required={true}
-                    onChange={inputContentJapanese} rows={5} value={contentJapanese} type={"text"}
+                    onChange={inputContentJapanese} rows={8} value={contentJapanese} type={"text"}
                 />
                 <TextInput
                     fullWidth={true} label={"説明/補足"} multiline={true} required={false}
-                    onChange={inputTips} rows={5} value={tips} type={"text"}
+                    onChange={inputTips} rows={8} value={tips} type={"text"}
                 />
                 <div className="module-spacer--small"/>
-                <div className={classes.row}>
+                <div className={classes.button_row}>
                     <PrimaryButton
                         label={"投稿する"}
                         onClick={() => dispatch(createPost( uid, title, subject, category, contentEnglish, contentJapanese, tips ))}
@@ -94,7 +94,7 @@ const PostNew = () => {
                     />
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 

@@ -2,7 +2,7 @@
 set -e
 
 # comment before debag.
-echo "Start /api/entrypoint.sh"
+echo "Start /myapp//entrypoint.sh"
 
 # Remove a potentially pre-existing server.pid for Rails.
 rm -f /myapp/tmp/pids/server.pid
