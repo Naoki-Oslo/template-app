@@ -38,7 +38,8 @@
 
 ## ER図
 
-![portfolio drawio ](https://user-images.githubusercontent.com/67878526/138093067-038d6686-59d7-4d72-90a6-cb2ac17789dd.png)
+![portfolio drawio](https://user-images.githubusercontent.com/67878526/138094535-cc5e5629-28d7-49a5-ac1e-006c2d8f8229.png)
+
 
 ## AWS構成図
 
