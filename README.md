@@ -38,9 +38,11 @@
 
 ## ER図
 
+![portfolio drawio ](https://user-images.githubusercontent.com/67878526/138093067-038d6686-59d7-4d72-90a6-cb2ac17789dd.png)
 
 ## AWS構成図
 
+![template-app](https://user-images.githubusercontent.com/67878526/138092170-46849be6-1b7e-42f2-b11e-40b50f93f29c.png)
 
 ## 機能一覧
 - 新規登録・ログイン機能
