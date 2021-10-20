@@ -12,38 +12,37 @@
 ### バックエンド面
 - Ruby on RailsのAPIモードを利用し、APIサーバーとしてフロントエンドからのリクエストに対してJSONデータを返している点
 - セッション認証を利用したログインを実装してる点
-フロントエンド面
+### フロントエンド面
 - React.jsを採用し、SPA（シングルページアプリケーション）で配信している点
 - UIフレームワークにMaterial-UIを使用し、整ったUIを意識している点
-その他
+### その他
 - フロント側ではESLint/Prettier、バック側でrubcopといったコード解析ツールを採用し読みやすいコードを意識している点
 - チーム開発を意識し、issueやブランチを活用した開発手法を取り入れている点
 
-使用した技術
-フロントエンド
+## 使用した技術
+### フロントエンド
 - HTML/CSS
 - Javascript
 - React.js（SPAモード）
 - Material-UI（UIフレームワーク）
 - ESLint/Prettier（コード解析ツール）
-バックエンド
+### バックエンド
 - Ruby 2.7.2
 - Ruby on Rails 6.0.3 （APIモード）
 - Rubocop（コード解析ツール）
 - RSpec（テスト）
-インフラ・開発環境
+### インフラ・開発環境
 - Docker/Docker-compose
 - AWS（ECR,ECS,VPC,S3,Route53,ALB,RDS,ACM,SSM）
 - CircleCI（CI/CD）
 
-ER図
+## ER図
 
 
-AWS構成図
+## AWS構成図
 
 
-機能一覧
-基本機能
+## 機能一覧
 - 新規登録・ログイン機能
 - 投稿全体の閲覧
 - 投稿詳細情報閲覧
