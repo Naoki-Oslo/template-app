@@ -4,6 +4,9 @@
 
 リンク：https://your-template.net
 
+![スクリーンショット 2021-10-20 21 48 22](https://user-images.githubusercontent.com/67878526/138095935-85f58c11-4992-4082-8a94-6b6251e5620b.png)
+
+
 ## 特に見ていただきたい点
 ### インフラ
 - Dockerを使い、ECS(FARGATE)/ECRで本番環境をサーバーレスで運用している点
@@ -18,6 +21,7 @@
 ### その他
 - フロント側ではESLint/Prettier、バック側でrubcopといったコード解析ツールを採用し読みやすいコードを意識している点
 - チーム開発を意識し、issueやブランチを活用した開発手法を取り入れている点
+
 
 ## 使用した技術
 ### フロントエンド
@@ -36,6 +40,7 @@
 - AWS（ECR,ECS,VPC,S3,Route53,ALB,RDS,ACM,SSM）
 - CircleCI（CI/CD）
 
+
 ## ER図
 
 ![portfolio drawio](https://user-images.githubusercontent.com/67878526/138094535-cc5e5629-28d7-49a5-ac1e-006c2d8f8229.png)
@@ -43,7 +48,8 @@
 
 ## AWS構成図
 
-![template-app](https://user-images.githubusercontent.com/67878526/138092170-46849be6-1b7e-42f2-b11e-40b50f93f29c.png)
+![template-app](https://user-images.githubusercontent.com/67878526/138094985-547295f8-cfbe-45ff-81ed-f30f24646621.png)
+
 
 ## 機能一覧
 - 新規登録・ログイン機能
