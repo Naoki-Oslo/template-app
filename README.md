@@ -45,7 +45,7 @@
 - RSpec（テスト）
 ### インフラ・開発環境
 - Docker/Docker-compose
-- AWS（ECR,ECS,VPC,S3,Route53,ALB,RDS,ACM,SSM）
+- AWS（ECR,ECS(FARGATE),VPC,S3,Route53,ALB,RDS,ACM,SSM）
 - CircleCI（CI/CD）
 
 
