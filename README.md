@@ -2,7 +2,7 @@
 
 「YourTemplate」は英語定型文をシェア、管理できる無料アプリです！基本機能はログイン無しで閲覧可能ですので、お気軽にご利用ください。（ゲストログインも用意してあります！）
 
-リンク：https://your-template.net
+リンク：https://your-template.net(※2024年現在、サービスはCloseしております)
 
 ![スクリーンショット 2021-10-20 21 48 22](https://user-images.githubusercontent.com/67878526/138095935-85f58c11-4992-4082-8a94-6b6251e5620b.png)
 
